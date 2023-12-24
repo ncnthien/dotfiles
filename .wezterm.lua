@@ -14,6 +14,7 @@ config.force_reverse_video_cursor = true
 
 -- Config tab_bar
 config.show_new_tab_button_in_tab_bar = false
+config.tab_bar_at_bottom = true
 config.use_fancy_tab_bar = false
 config.hide_tab_bar_if_only_one_tab = true
 config.colors = {
@@ -33,18 +34,6 @@ config.colors = {
 	ansi = { "#090618", "#c34043", "#76946a", "#c0a36e", "#7e9cd8", "#957fb8", "#6a9589", "#c8c093" },
 	brights = { "#727169", "#e82424", "#98bb6c", "#e6c384", "#7fb4ca", "#938aa9", "#7aa89f", "#dcd7ba" },
 	indexed = { [16] = "#ffa066", [17] = "#ff5d62" },
-	tab_bar = {
-		background = "#282a36",
-		active_tab = {
-			bg_color = "#44475A",
-			fg_color = "#ddd7ba",
-			intensity = "Bold",
-		},
-		inactive_tab = {
-			bg_color = "#282a36",
-			fg_color = "#ddd7ba",
-		},
-	},
 }
 
 return config
