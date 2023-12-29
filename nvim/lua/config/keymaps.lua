@@ -18,3 +18,6 @@ map("i", "<Up>", "<Nop>")
 map("i", "<Down>", "<Nop>")
 map("i", "<Left>", "<Nop>")
 map("i", "<Right>", "<Nop>")
+
+-- Escape to normal mode
+map("i", "jk", "<Esc>")
