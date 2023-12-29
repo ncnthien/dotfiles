@@ -8,3 +8,9 @@ map("n", "<C-a>", "gg<S-v>G")
 
 map("v", "<M-j>", ":m '>+1<CR>gv=gv")
 map("v", "<M-k>", ":m '<-2<CR>gv=gv")
+
+-- Disable arrow keys
+map("n", "<Up>", "<Nop>")
+map("n", "<Down>", "<Nop>")
+map("n", "<Left>", "<Nop>")
+map("n", "<Right>", "<Nop>")
