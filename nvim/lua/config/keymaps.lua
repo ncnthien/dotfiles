@@ -21,3 +21,4 @@ map("i", "<Right>", "<Nop>")
 
 -- Escape to normal mode
 map("i", "jk", "<Esc>")
+map("v", "jk", "<Esc>")
