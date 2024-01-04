@@ -4,8 +4,10 @@
 
 local map = vim.keymap.set
 
+-- Select all
 map("n", "<C-a>", "gg<S-v>G")
 
+-- Move lines up and down
 map("v", "<M-j>", ":m '>+1<CR>gv=gv")
 map("v", "<M-k>", ":m '<-2<CR>gv=gv")
 
@@ -22,3 +24,9 @@ map("i", "<Right>", "<Nop>")
 -- Escape to normal mode
 map("i", "jk", "<Esc>")
 map("v", "jk", "<Esc>")
+
+-- Resize window using <ctrl> arrow keys
+map("n", "<S-Up>", "<cmd>resize +2<cr>", { desc = "Increase window height" })
+map("n", "<S-Down>", "<cmd>resize -2<cr>", { desc = "Decrease window height" })
+map("n", "<S-Left>", "<cmd>vertical resize -2<cr>", { desc = "Decrease window width" })
+map("n", "<S-Right>", "<cmd>vertical resize +2<cr>", { desc = "Increase window width" })
