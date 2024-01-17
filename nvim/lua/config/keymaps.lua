@@ -16,3 +16,5 @@ map("i", "<Up>", "<Nop>")
 map("i", "<Down>", "<Nop>")
 map("i", "<Left>", "<Nop>")
 map("i", "<Right>", "<Nop>")
+
+map("n", "<leader>qq", "<cmd>qa<cr>", { desc = "Quit all" })
