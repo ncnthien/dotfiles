@@ -1,9 +1,9 @@
 return {
-  { "rose-pine/neovim", name = "rose-pine" },
   {
-    "LazyVim/LazyVim",
-    opts = {
-      colorscheme = "rose-pine",
-    },
+    "rebelot/kanagawa.nvim",
+    name = "kanagawa",
+    config = function()
+      vim.cmd([[ colorscheme kanagawa ]])
+    end,
   },
 }
