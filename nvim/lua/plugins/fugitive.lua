@@ -7,10 +7,14 @@ return {
     { "<leader>gl", "<cmd>Git log<cr>", desc = "Git log" },
     { "<leader>gd", "<cmd>Gvdiffsplit<cr>", desc = "Git vertical diff" },
     { 
-      "<leader>gcm", 
+      "<leader>gc", 
       function()
         vim.ui.input({ prompt = "Commit message: " }, function(input)
-        vim.cmd('Git commit -m "'..input..'"')
+          if input == '' then
+            vim.cmd('Git commit')
+          else
+            vim.cmd('Git commit -m "'..input..'"')
+          end
         end)
       end, 
       desc = "Git commit message" 
