@@ -10,8 +10,7 @@ return {
       "<leader>gcm", 
       function()
         vim.ui.input({ prompt = "Commit message: " }, function(input)
-          print('the input is %s', input)
-          vim.cmd([[ Git commit -m "%s" ]], input)
+        vim.cmd('Git commit -m "'..input..'"')
         end)
       end, 
       desc = "Git commit message" 
