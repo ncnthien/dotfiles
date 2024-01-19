@@ -5,7 +5,7 @@ return {
     { "<leader>gg", "<cmd>Git<cr>", desc = "Git status" },
     { "<leader>ga", "<cmd>Git add .<cr>", desc = "Git add all" },
     { "<leader>gl", "<cmd>Git log<cr>", desc = "Git log" },
-    { "<leader>gd", "<cmd>Gvdiff<cr>", desc = "Git vertical diff" },
+    { "<leader>gd", "<cmd>Gvdiffsplit<cr>", desc = "Git vertical diff" },
     { 
       "<leader>gcm", 
       function()
