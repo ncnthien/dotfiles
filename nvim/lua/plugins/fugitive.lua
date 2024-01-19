@@ -14,6 +14,8 @@ return {
         end)
       end, 
       desc = "Git commit message" 
-    }
+    },
+    { "<leader>gps", "<cmd>Git push<cr>", desc = "Git push" },
+    { "<leader>gpl", "<cmd>Git pull<cr>", desc = "Git pull" }
   }
 }
