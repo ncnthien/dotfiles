@@ -10,16 +10,16 @@ return {
       "<leader>gc", 
       function()
         vim.ui.input({ prompt = "Commit message: " }, function(input)
-          if input == '' then
+          if not input or input == '' then
             vim.cmd('Git commit')
           else
             vim.cmd('Git commit -m "'..input..'"')
           end
         end)
       end, 
-      desc = "Git commit message" 
+      desc = "Git commit" 
     },
     { "<leader>gps", "<cmd>Git push<cr>", desc = "Git push" },
-    { "<leader>gpl", "<cmd>Git pull<cr>", desc = "Git pull" }
+    { "<leader>gpl", "<cmd>Git pull<cr>", desc = "Git pull" },
   }
 }
