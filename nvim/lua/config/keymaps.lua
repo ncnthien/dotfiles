@@ -34,3 +34,7 @@ map("n", "<leader>wl", "<C-W>v", { desc = "Split window right", remap = true })
 
 -- Save file
 map({ "i", "x", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Save file" })
+
+-- Select a word
+map("n", "vv", "viw", { desc = "Select current word" })
+
