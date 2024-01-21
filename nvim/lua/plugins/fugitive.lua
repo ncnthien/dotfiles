@@ -20,6 +20,7 @@ return {
       end, 
       desc = "Git commit" 
     },
+    { "<leader>gca", "<cmd>Git commit --amend<cr>", desc = "Git commit amend" },
     { "<leader>gps", "<cmd>Git push<cr>", desc = "Git push" },
     { "<leader>gpl", "<cmd>Git pull<cr>", desc = "Git pull" },
   }
