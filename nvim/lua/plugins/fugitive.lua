@@ -7,19 +7,7 @@ return {
     { "<leader>gl", "<cmd>Git log<cr>", desc = "Git log" },
     { "<leader>gd", "<cmd>Gvdiffsplit<cr>", desc = "Git vertical diff" },
     { "<leader>gb", "<cmd>Git branch<cr>", desc = "Git branch" },
-    { 
-      "<leader>gc", 
-      function()
-        vim.ui.input({ prompt = "Commit message: " }, function(input)
-          if not input or input == '' then
-            vim.cmd('Git commit')
-          else
-            vim.cmd('Git commit -m "'..input..'"')
-          end
-        end)
-      end, 
-      desc = "Git commit" 
-    },
+    { "<leader>gc", "<cmd>Git commit<cr>", desc = "Git commit" },
     { "<leader>gca", "<cmd>Git commit --amend<cr>", desc = "Git commit amend" },
     { "<leader>gps", "<cmd>Git push<cr>", desc = "Git push" },
     { 
