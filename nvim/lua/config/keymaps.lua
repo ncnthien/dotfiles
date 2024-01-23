@@ -27,10 +27,10 @@ map("n", "<C-k>", "<C-w>k", { desc = "Go to upper window" })
 map("n", "<C-l>", "<C-w>l", { desc = "Go to right window" })
 
 -- Windows
-map("n", "<leader>ww", "<C-W>p", { desc = "Other window", remap = true })
-map("n", "<leader>wd", "<C-W>c", { desc = "Delete window", remap = true })
-map("n", "<leader>wj", "<C-W>s", { desc = "Split window below", remap = true })
-map("n", "<leader>wl", "<C-W>v", { desc = "Split window right", remap = true })
+map("n", "<leader>ww", "<C-W>p", { desc = "Other window" })
+map("n", "<leader>wd", "<C-W>c", { desc = "Delete window" })
+map("n", "<leader>wj", "<C-W>s", { desc = "Split window below" })
+map("n", "<leader>wl", "<C-W>v", { desc = "Split window right" })
 
 -- Save file
 map({ "i", "x", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Save file" })
