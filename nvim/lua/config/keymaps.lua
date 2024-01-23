@@ -5,7 +5,6 @@ map("n", "<C-a>", "gg<S-v>G", { desc = "Select all" })
 
 -- Escape to normal mode
 map("i", "jk", "<Esc>", { desc = "Escape to normal mode" })
-map("v", "jk", "<Esc>", { desc = "Escape to normal mode" })
 
 -- Disable arrow keys
 map("n", "<Up>", "<Nop>")
@@ -34,6 +33,3 @@ map("n", "<leader>wl", "<C-W>v", { desc = "Split window right" })
 
 -- Save file
 map({ "i", "x", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Save file" })
-
--- Select a word
-map("n", "vv", "viw", { desc = "Select current word" })
