@@ -1,6 +1,7 @@
 return {
   "tpope/vim-fugitive",
   name = "fugitive",
+  event = "VimEnter",
   keys = {
     { "<leader>gg",  "<cmd>Git<cr>",                desc = "Git status" },
     { "<leader>ga",  "<cmd>Git add .<cr>",          desc = "Git add all" },
