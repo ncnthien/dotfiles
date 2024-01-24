@@ -14,7 +14,6 @@ local stl = {
   '%m',
   '%=',
   '%#SecondaryBlock#',
-  '%l,%c ',
   '%#PrimaryBlock#',
   '%{&filetype}',
 }
