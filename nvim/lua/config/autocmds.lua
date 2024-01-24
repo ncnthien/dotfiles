@@ -2,7 +2,6 @@ local function augroup(name)
   return vim.api.nvim_create_augroup("ncnthien_" .. name, { clear = true })
 end
 
--- go to last loc when opening a buffer
 vim.api.nvim_create_autocmd("BufReadPost", {
   group = augroup("last_loc"),
   callback = function(event)
@@ -20,22 +19,19 @@ vim.api.nvim_create_autocmd("BufReadPost", {
   end,
 })
 
--- Use LspAttach autocommand to only map the following keys
--- after the language server attaches to the current buffer
 vim.api.nvim_create_autocmd('LspAttach', {
   group = augroup("UserLspConfig"),
   callback = function(ev)
-    -- Enable completion triggered by <c-x><c-o>
     vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
 
     local opts = { buffer = ev.buf }
-    vim.keymap.set('n', '<space>cD', vim.lsp.buf.declaration, opts)
-    vim.keymap.set('n', '<space>cd', vim.lsp.buf.definition, opts)
-    vim.keymap.set('n', '<space>cx', vim.lsp.buf.hover, opts)
-    vim.keymap.set('n', '<space>cr', vim.lsp.buf.rename, opts)
-    vim.keymap.set({ 'n', 'v' }, '<space>ca', vim.lsp.buf.code_action, opts)
-    vim.keymap.set('n', '<space>ce', vim.lsp.buf.references, opts)
-    vim.keymap.set('n', '<space>cf', function()
+    vim.keymap.set('n', '<leader>cD', vim.lsp.buf.declaration, opts)
+    vim.keymap.set('n', '<leader>cd', vim.lsp.buf.definition, opts)
+    vim.keymap.set('n', '<leader>cx', vim.lsp.buf.hover, opts)
+    vim.keymap.set('n', '<leader>cr', vim.lsp.buf.rename, opts)
+    vim.keymap.set({ 'n', 'v' }, '<leader>ca', vim.lsp.buf.code_action, opts)
+    vim.keymap.set('n', '<leader>ce', vim.lsp.buf.references, opts)
+    vim.keymap.set('n', '<leader>cf', function()
       vim.lsp.buf.format { async = true }
     end, opts)
   end,
