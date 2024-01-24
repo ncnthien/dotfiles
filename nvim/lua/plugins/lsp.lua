@@ -9,6 +9,7 @@ return {
     "hrsh7th/cmp-cmdline",
     "L3MON4D3/LuaSnip",
     "saadparwaiz1/cmp_luasnip",
+    "zbirenbaum/copilot-cmp",
     "hrsh7th/nvim-cmp",
   },
   config = function()
@@ -38,6 +39,7 @@ return {
 
     -- cmp
     local cmp = require('cmp')
+    require('copilot_cmp').setup()
     cmp.setup({
       snippet = {
         expand = function(args)
@@ -50,6 +52,7 @@ return {
         ['<Tab>'] = cmp.mapping.confirm({ select = true, behavior = cmp.ConfirmBehavior.Insert }),
       }),
       sources = cmp.config.sources({
+        { name = 'copilot' },
         { name = 'nvim_lsp' },
         { name = 'luasnip' },
       }, {
@@ -73,6 +76,7 @@ return {
         { name = 'cmdline' }
       })
     })
+
     vim.opt.pumheight = 7
   end
 }
