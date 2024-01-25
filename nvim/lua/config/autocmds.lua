@@ -47,7 +47,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
 -- Auto run eslint fix before save if eslint is installed
 vim.api.nvim_create_autocmd('BufWritePre', {
-  group = augroup("UserLspConfig"),
+  group = augroup("Eslint"),
   callback = function()
     if vim.fn.exists(':EslintFixAll') > 0 then vim.cmd('EslintFixAll') end
   end,
