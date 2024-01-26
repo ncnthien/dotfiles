@@ -40,6 +40,11 @@ return {
 
     -- cmp
     local cmp = require('cmp')
+    local mapping_insert = {
+        ['<M-k>'] = cmp.mapping(cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select, count = 1 }), { 'i', 'c' }),
+        ['<M-j>'] = cmp.mapping(cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select, count = 1 }), { 'i', 'c' }),
+        ['<Tab>'] = cmp.mapping(cmp.mapping.confirm({ select = true, behavior = cmp.ConfirmBehavior.Insert }), { 'i', 'c' })
+      }
     require('copilot_cmp').setup()
     cmp.setup({
       snippet = {
@@ -47,11 +52,7 @@ return {
           require('luasnip').lsp_expand(args.body)
         end,
       },
-      mapping = cmp.mapping.preset.insert({
-        ['<M-k>'] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select, count = 1 }),
-        ['<M-j>'] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select, count = 1 }),
-        ['<Tab>'] = cmp.mapping.confirm({ select = true, behavior = cmp.ConfirmBehavior.Insert }),
-      }),
+      mapping = cmp.mapping.preset.insert(mapping_insert),
       sources = cmp.config.sources({
         { name = 'copilot' },
         { name = 'nvim_lsp' },
@@ -64,13 +65,13 @@ return {
       },
     })
     cmp.setup.cmdline({ '/', '?' }, {
-      mapping = cmp.mapping.preset.cmdline(),
+      mapping = cmp.mapping.preset.cmdline(mapping_insert),
       sources = {
         { name = 'buffer' }
       }
     })
     cmp.setup.cmdline(':', {
-      mapping = cmp.mapping.preset.cmdline(),
+      mapping = cmp.mapping.preset.cmdline(mapping_insert),
       sources = cmp.config.sources({
         { name = 'path' }
       }, {
