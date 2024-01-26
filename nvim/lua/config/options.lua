@@ -1,6 +1,5 @@
 local opt = vim.opt
 
-opt.cursorline = true
 opt.expandtab = true
 opt.number = true
 opt.relativenumber = true

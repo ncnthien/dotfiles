@@ -21,7 +21,10 @@ mods = "Alt"
 chars = "\u001bl"
 
 [window]
-startup_mode = "Fullscreen"
+startup_mode = "Maximized"
+opacity = 0.82
+blur = false
+decorations = "None"
 
 [font]
 normal = { family = "JetBrainsMono Nerd Font", style = "Bold" }
