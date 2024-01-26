@@ -1,30 +1,11 @@
 import = ["~/.config/alacritty/rose-pine.toml"]
 
-[[keyboard.bindings]]
-key = "J"
-mods = "Alt"
-chars = "\u001bj"
-
-[[keyboard.bindings]]
-key = "K"
-mods = "Alt"
-chars = "\u001bk"
-
-[[keyboard.bindings]]
-key = "H"
-mods = "Alt"
-chars = "\u001bh"
-
-[[keyboard.bindings]]
-key = "L"
-mods = "Alt"
-chars = "\u001bl"
-
 [window]
 startup_mode = "Maximized"
 opacity = 0.82
-blur = false
 decorations = "None"
+option_as_alt = "OnlyLeft"
+dynamic_padding = true
 
 [font]
 normal = { family = "JetBrainsMono Nerd Font", style = "Bold" }
