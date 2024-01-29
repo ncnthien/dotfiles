@@ -3,9 +3,6 @@ local map = vim.keymap.set
 -- Select all
 map("n", "<C-a>", "gg<S-v>G", { desc = "Select all" })
 
--- Escape to normal mode
-map("i", "jk", "<Esc>", { desc = "Escape to normal mode" })
-
 -- Disable arrow keys
 map("n", "<Up>", "<Nop>")
 map("n", "<Down>", "<Nop>")
