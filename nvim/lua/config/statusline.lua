@@ -1,20 +1,8 @@
-vim.api.nvim_exec(
-[[
-  hi PrimaryBlock   ctermfg=06 ctermbg=00
-  hi SecondaryBlock ctermfg=08 ctermbg=00
-  hi Blanks   ctermfg=07 ctermbg=00
-]], false)
-
 local stl = {
-  '%#PrimaryBlock#',
-  '%#Blanks#',
   '[%{FugitiveHead()}] ',
-  '%#SecondaryBlock#',
   '%f',
   '%m',
   '%=',
-  '%#SecondaryBlock#',
-  '%#PrimaryBlock#',
   '%{&filetype}',
 }
 
