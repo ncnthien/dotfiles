@@ -42,6 +42,9 @@ vim.api.nvim_create_autocmd('LspAttach', {
       vim.lsp.buf.format { async = true }
     end, opts)
     vim.keymap.set('n', '<leader>cq', quickfix, opts)
+    vim.keymap.set('n', '<leader>cs', vim.diagnostic.open_float, opts)
+    vim.keymap.set('n', '<leader>cn', vim.diagnostic.goto_next, opts)
+    vim.keymap.set('n', '<leader>cp', vim.diagnostic.goto_prev, opts)
   end,
 })
 
@@ -50,5 +53,12 @@ vim.api.nvim_create_autocmd('BufWritePre', {
   group = augroup("Eslint"),
   callback = function()
     if vim.fn.exists(':EslintFixAll') > 0 then vim.cmd('EslintFixAll') end
+  end,
+})
+
+vim.api.nvim_create_autocmd("TextYankPost", {
+  group = augroup("highlight_yank"),
+  callback = function()
+    vim.highlight.on_yank({ timeout = 50 })
   end,
 })

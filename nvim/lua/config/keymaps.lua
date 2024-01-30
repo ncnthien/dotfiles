@@ -30,3 +30,10 @@ map("n", "<leader>wl", "<C-W>v", { desc = "Split window right" })
 
 -- Save file
 map({ "i", "x", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Save file" })
+
+-- Center screen when moving
+map("n", "<C-u>", "<C-u>zz", { desc = "Center when scroll up" })
+map("n", "<C-d>", "<C-d>zz", { desc = "Center when scroll down" })
+
+-- Clear search with <esc>
+map({ "i", "x", "n", "s" }, "<esc>", "<cmd>:silent! noh<cr><esc>", { desc = "Clear search" })
