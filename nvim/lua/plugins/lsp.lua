@@ -24,7 +24,10 @@ return {
       handlers = {
         function(server_name)
           local lspconfig = require("lspconfig")
-          lspconfig[server_name].setup({})
+          local capabilities = require("cmp_nvim_lsp").default_capabilities()
+          lspconfig[server_name].setup({
+            capabilities = capabilities
+          })
         end
       }
     })
