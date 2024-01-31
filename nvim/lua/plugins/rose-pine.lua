@@ -9,7 +9,7 @@ return {
         transparency = true,
       },
       highlight_groups = {
-        StatusLine = { fg = "foam", bg = "foam", blend = 10 },
+        StatusLine = { fg = "text" },
         StatusLineNC = { fg = "subtle", bg = "surface" },
       },
     })
