@@ -24,7 +24,8 @@ map("n", "<C-l>", "<C-w>l", { desc = "Go to right window" })
 
 -- Windows
 map("n", "<leader>ww", "<C-W>p", { desc = "Other window" })
-map("n", "<leader>wd", "<C-W>c", { desc = "Delete window" })
+map("n", "<leader>wd", "<C-W>c", { desc = "Close window" })
+map("n", "<leader>wo", "<C-W>o", { desc = "Close all other windows" })
 map("n", "<leader>wj", "<C-W>s", { desc = "Split window below" })
 map("n", "<leader>wl", "<C-W>v", { desc = "Split window right" })
 

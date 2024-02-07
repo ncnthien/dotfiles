@@ -15,7 +15,13 @@ return {
     keymaps = {
       ["g?"] = "actions.show_help",
       ["-"] = "actions.select",
-      ["<C-m>"] = "actions.select_vsplit",
+      ["<cr>"] = {
+        callback = function()
+          require('oil').select({ vertical = true, split = "botright" })
+        end,
+        desc = "Select split vertical right",
+        mode = "n"
+      },
       ["_"] = "actions.parent",
       ["qq"] = "actions.close",
       ["<C-p>"] = "actions.preview",
