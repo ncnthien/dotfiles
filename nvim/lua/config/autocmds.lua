@@ -45,6 +45,18 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.keymap.set('n', '<leader>cs', vim.diagnostic.open_float, opts)
     vim.keymap.set('n', '<leader>cn', vim.diagnostic.goto_next, opts)
     vim.keymap.set('n', '<leader>cp', vim.diagnostic.goto_prev, opts)
+
+    local signs = {
+      Error = " ",
+      Warn = " ",
+      Hint = " ",
+      Info = " ",
+    }
+
+    for type, icon in pairs(signs) do
+      local hl = "DiagnosticSign" .. type
+      vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
+    end
   end,
 })
 

@@ -33,10 +33,10 @@ function Get_status_line()
   local hints = get_hint()
   local infos = get_info()
 
-  local errors_message = errors > 0 and string.format('%s',color(diagnostic_error_group, string.format('E:%s', errors))) or ''
-  local warns_message = warns > 0 and string.format('%s', color(diagnostic_warn_group, string.format(' W:%s', warns))) or ''
-  local hints_message = hints > 0 and string.format('%s', color(diagnostic_hint_group, string.format(' H:%s', hints))) or ''
-  local infos_message = infos > 0 and string.format('%s', color(diagnostic_info_group, string.format(' I:%s', infos))) or ''
+  local errors_message = errors > 0 and string.format('%s',color(diagnostic_error_group, string.format(' %s', errors))) or ''
+  local warns_message = warns > 0 and string.format('%s', color(diagnostic_warn_group, string.format('  %s', warns))) or ''
+  local hints_message = hints > 0 and string.format('%s', color(diagnostic_hint_group, string.format('  %s', hints))) or ''
+  local infos_message = infos > 0 and string.format('%s', color(diagnostic_info_group, string.format('  %s', infos))) or ''
 
   return string.format('%s%s%s%s%s%s%s%s %s', '[%{FugitiveHead()}] ', '%f', '%m', '%=', errors_message,
     warns_message, hints_message, infos_message, '%{&filetype}')
