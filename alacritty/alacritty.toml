@@ -10,3 +10,8 @@ dynamic_padding = true
 [font]
 normal = { family = "JetBrainsMono Nerd Font", style = "Bold" }
 size = 15
+
+[[keyboard.bindings]]
+chars = "\u001B[13;2u"
+key = "Return"
+mods = "Shift"
