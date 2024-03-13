@@ -1,8 +1,7 @@
 return {
   'stevearc/oil.nvim',
   keys = {
-    { '<leader>oo', '<cmd>Oil<CR>', { desc = 'Open Oil' } },
-    { '<leader>of', '<cmd>Oil --float<CR>', { desc = 'Open Oil with float' } },
+    { '<leader>o', '<cmd>Oil<CR>', { desc = 'Open Oil' } },
   },
   opts = {
     delete_to_trash = true,
