@@ -22,6 +22,12 @@ map("n", "<C-j>", "<C-w>j", { desc = "Go to lower window" })
 map("n", "<C-k>", "<C-w>k", { desc = "Go to upper window" })
 map("n", "<C-l>", "<C-w>l", { desc = "Go to right window" })
 
+-- Resize windows
+map("n", "<A-h>", "<cmd>vertical resize -2<cr>", { desc = "Decrease window width" })
+map("n", "<A-l>", "<cmd>vertical resize +2<cr>", { desc = "Increase window width" })
+map("n", "<A-j>", "<cmd>resize +2<cr>", { desc = "Increase window height" })
+map("n", "<A-k>", "<cmd>resize -2<cr>", { desc = "Decrease window height" })
+
 -- Windows
 map("n", "<leader>ww", "<C-W>p", { desc = "Other window" })
 map("n", "<leader>wd", "<C-W>c", { desc = "Close window" })
