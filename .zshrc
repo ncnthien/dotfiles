@@ -104,3 +104,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 alias v="nvim"
+alias l="lsd -lha"
+alias ls="lsd"
+
+PATH=~/.console-ninja/.bin:$PATH
