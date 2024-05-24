@@ -50,3 +50,17 @@ map({ "n", "x" }, "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true
 map({ "n", "x" }, "<Down>", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 map({ "n", "x" }, "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 map({ "n", "x" }, "<Up>", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
+
+-- console.log current word (JS only)
+map(
+  "n",
+  "cd",
+  function()
+    local current_word = vim.fn.expand("<cword>")
+    vim.cmd('normal! o')
+    local new_line_num = vim.fn.line('.')
+    vim.fn.setline(new_line_num, 'console.log("' .. current_word .. '", '.. current_word ..')')
+    vim.cmd('normal! $')
+  end,
+  { noremap = true, silent = true, desc = "Log current word" }
+)
