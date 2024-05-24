@@ -54,7 +54,7 @@ map({ "n", "x" }, "<Up>", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = t
 -- console.log current word (JS only)
 map(
   "n",
-  "cd",
+  "cn",
   function()
     local current_word = vim.fn.expand("<cword>")
     local current_line = vim.api.nvim_get_current_line()
