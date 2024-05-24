@@ -57,9 +57,11 @@ map(
   "cd",
   function()
     local current_word = vim.fn.expand("<cword>")
+    local current_line = vim.api.nvim_get_current_line()
+    local indent = string.match(current_line, "^%s*")
     vim.cmd('normal! o')
     local new_line_num = vim.fn.line('.')
-    vim.fn.setline(new_line_num, 'console.log("' .. current_word .. '", '.. current_word ..')')
+    vim.fn.setline(new_line_num, indent .. 'console.log(\'' .. current_word .. '\', '.. current_word ..')')
     vim.cmd('normal! $')
   end,
   { noremap = true, silent = true, desc = "Log current word" }
