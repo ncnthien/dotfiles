@@ -6,7 +6,6 @@ return {
     { "<leader>gg",  "<cmd>Git<cr>",                desc = "Git status" },
     { "<leader>ga",  "<cmd>Git add .<cr>",          desc = "Git add all" },
     { "<leader>glg", "<cmd>Git log<cr>",            desc = "Git log" },
-    { "<leader>gd",  "<cmd>Gvdiffsplit<cr>",        desc = "Git vertical diff" },
     { "<leader>gb",  "<cmd>Git branch<cr>",         desc = "Git branch" },
     { "<leader>gc",  "<cmd>Git commit<cr>",         desc = "Git commit" },
     { "<leader>gca", "<cmd>Git commit --amend<cr>", desc = "Git commit amend" },
@@ -24,6 +23,15 @@ return {
       end,
       desc = "Git push force"
     },
-    { "<leader>gl", "<cmd>Git pull<cr>", desc = "Git pull" },
+    {
+      "<leader>gd",
+      function()
+        vim.ui.input({ prompt = "Which branch do you want to diff with current branch?: " }, function(input)
+          vim.cmd('Gvdiffsplit ' .. input)
+        end)
+      end,
+      desc = "Git vertical diff"
+    },
+    { "<leader>gl",  "<cmd>Git pull<cr>",            desc = "Git pull" },
   }
 }
