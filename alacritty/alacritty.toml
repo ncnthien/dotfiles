@@ -2,14 +2,13 @@ import = ["~/.config/alacritty/rose-pine.toml"]
 
 [window]
 startup_mode = "Maximized"
-opacity = 0.82
 decorations = "None"
 option_as_alt = "OnlyLeft"
 dynamic_padding = true
 
 [font]
 normal = { family = "JetBrainsMono Nerd Font", style = "Bold" }
-size = 15
+size = 16
 
 [[keyboard.bindings]]
 chars = "\u001B[13;2u"
