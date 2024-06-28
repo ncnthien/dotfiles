@@ -9,7 +9,4 @@ return {
     { "<leader>/",       "<cmd>Telescope live_grep<cr>",   desc = "Live grep",   mode = "n", },
     { "<leader>/",       "<cmd>Telescope grep_string<cr>", desc = "String grep", mode = "v", }
   },
-  config = function()
-    require('telescope.builtin').find_files()
-  end
 }

@@ -28,7 +28,7 @@ return {
       function()
         vim.ui.input({ prompt = "Which branch do you want to diff with current branch?: " }, function(input)
           if input then
-            vim.cmd('Gvdiffsplit ' .. input)
+            vim.cmd('Gvdiffsplit! ' .. input)
           end
         end)
       end,
