@@ -27,7 +27,9 @@ return {
       "<leader>gd",
       function()
         vim.ui.input({ prompt = "Which branch do you want to diff with current branch?: " }, function(input)
-          vim.cmd('Gvdiffsplit ' .. input)
+          if input then
+            vim.cmd('Gvdiffsplit ' .. input)
+          end
         end)
       end,
       desc = "Git vertical diff"
