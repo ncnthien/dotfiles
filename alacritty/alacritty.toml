@@ -3,6 +3,8 @@ import = ["~/.config/alacritty/rose-pine.toml"]
 [window]
 startup_mode = "Maximized"
 decorations = "None"
+opacity = 0.75
+blur = true
 option_as_alt = "OnlyLeft"
 dynamic_padding = true
 
