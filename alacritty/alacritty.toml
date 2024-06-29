@@ -9,8 +9,8 @@ option_as_alt = "OnlyLeft"
 dynamic_padding = true
 
 [font]
-normal = { family = "JetBrainsMono Nerd Font", style = "Bold" }
-size = 16
+normal = { family = "JetBrainsMono Nerd Font" }
+size = 17
 
 [[keyboard.bindings]]
 chars = "\u001B[13;2u"
