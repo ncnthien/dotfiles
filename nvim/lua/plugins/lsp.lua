@@ -1,3 +1,14 @@
+local border = {
+  { '┌', 'FloatBorder' },
+  { '─', 'FloatBorder' },
+  { '┐', 'FloatBorder' },
+  { '│', 'FloatBorder' },
+  { '┘', 'FloatBorder' },
+  { '─', 'FloatBorder' },
+  { '└', 'FloatBorder' },
+  { '│', 'FloatBorder' },
+}
+
 return {
   "neovim/nvim-lspconfig",
   dependencies = {
@@ -27,9 +38,13 @@ return {
           local lspconfig = require("lspconfig")
           local capabilities = require("cmp_nvim_lsp").default_capabilities()
           lspconfig[server_name].setup({
-            capabilities = capabilities
+            capabilities = capabilities,
+            handlers = {
+              ['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, { border = border }),
+              ['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = border }),
+            },
           })
-        end
+        end,
       }
     })
     require('lspconfig').lua_ls.setup({
@@ -45,10 +60,10 @@ return {
     -- cmp
     local cmp = require('cmp')
     local mapping_insert = {
-        ['<M-k>'] = cmp.mapping(cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select, count = 1 }), { 'i', 'c' }),
-        ['<M-j>'] = cmp.mapping(cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select, count = 1 }), { 'i', 'c' }),
-        ['<Tab>'] = cmp.mapping(cmp.mapping.confirm({ select = true, behavior = cmp.ConfirmBehavior.Insert }), { 'i', 'c' })
-      }
+      ['<M-k>'] = cmp.mapping(cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select, count = 1 }), { 'i', 'c' }),
+      ['<M-j>'] = cmp.mapping(cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select, count = 1 }), { 'i', 'c' }),
+      ['<Tab>'] = cmp.mapping(cmp.mapping.confirm({ select = true, behavior = cmp.ConfirmBehavior.Insert }), { 'i', 'c' })
+    }
     require('copilot_cmp').setup()
     cmp.setup({
       snippet = {
@@ -56,14 +71,18 @@ return {
           require('luasnip').lsp_expand(args.body)
         end,
       },
+      window = {
+        completion = cmp.config.window.bordered(),
+        documentation = cmp.config.window.bordered(),
+      },
       mapping = cmp.mapping.preset.insert(mapping_insert),
       sources = cmp.config.sources({
         { name = 'copilot' },
         { name = 'nvim_lsp' },
         { name = 'luasnip' },
       }, {
-        { name = 'buffer' },
-      }),
+          { name = 'buffer' },
+        }),
       experimental = {
         ghost_text = true
       },
@@ -79,10 +98,11 @@ return {
       sources = cmp.config.sources({
         { name = 'path' }
       }, {
-        { name = 'cmdline' }
-      })
+          { name = 'cmdline' }
+        })
     })
 
     vim.opt.pumheight = 7
+    vim.diagnostic.config({ float = { border = border } })
   end
 }
