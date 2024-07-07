@@ -1,14 +1,3 @@
-local border = {
-  { '┌', 'FloatBorder' },
-  { '─', 'FloatBorder' },
-  { '┐', 'FloatBorder' },
-  { '│', 'FloatBorder' },
-  { '┘', 'FloatBorder' },
-  { '─', 'FloatBorder' },
-  { '└', 'FloatBorder' },
-  { '│', 'FloatBorder' },
-}
-
 return {
   "neovim/nvim-lspconfig",
   dependencies = {
@@ -40,8 +29,8 @@ return {
           lspconfig[server_name].setup({
             capabilities = capabilities,
             handlers = {
-              ['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, { border = border }),
-              ['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = border }),
+              ['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, { border = "single" }),
+              ['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = "single" }),
             },
           })
         end,
@@ -103,6 +92,6 @@ return {
     })
 
     vim.opt.pumheight = 7
-    vim.diagnostic.config({ float = { border = border } })
+    vim.diagnostic.config({ float = { border = "single" } })
   end
 }
