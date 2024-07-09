@@ -24,6 +24,16 @@ hl(0, diagnostic_warn_group_sign, { fg = pallettes.red.base })
 hl(0, diagnostic_hint_group_sign, { fg = pallettes.red.base })
 hl(0, diagnostic_info_group_sign, { fg = pallettes.red.base })
 
+local diagnostic_error_group_floating = 'DiagnosticFloatingError'
+local diagnostic_warn_group_floating = 'DiagnosticFloatingWarn'
+local diagnostic_hint_group_floating = 'DiagnosticFloatinghint'
+local diagnostic_info_group_floating = 'DiagnosticFloatingInfo'
+
+hl(0, diagnostic_error_group_floating, { fg = pallettes.red.base })
+hl(0, diagnostic_warn_group_floating, { fg = pallettes.red.base })
+hl(0, diagnostic_hint_group_floating, { fg = pallettes.red.base })
+hl(0, diagnostic_info_group_floating, { fg = pallettes.red.base })
+
 local get_error = function()
   return #vim.diagnostic.get(0, { severity = vim.diagnostic.severity.ERROR })
 end
