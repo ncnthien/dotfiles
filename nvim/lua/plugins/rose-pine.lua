@@ -14,5 +14,6 @@ return {
       },
     })
 		vim.cmd([[colorscheme rose-pine]])
-	end
+	end,
+  enabled = false
 }

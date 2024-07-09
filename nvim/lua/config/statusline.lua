@@ -2,17 +2,27 @@ local function color(group_name, item)
   return '%#' .. group_name .. '#' .. item .. '%*'
 end
 
-local colors = require 'rose-pine.palette'
+local pallettes = require('nightfox.palette').load('nordfox')
 local hl = vim.api.nvim_set_hl
 local diagnostic_error_group = 'DiagnosticError'
 local diagnostic_warn_group = 'DiagnosticWarn'
 local diagnostic_hint_group = 'DiagnosticHint'
 local diagnostic_info_group = 'DiagnosticInfo'
 
-hl(0, diagnostic_error_group, { fg = colors.love })
-hl(0, diagnostic_warn_group, { fg = colors.gold })
-hl(0, diagnostic_hint_group, { fg = colors.iris })
-hl(0, diagnostic_info_group, { fg = colors.foam })
+hl(0, diagnostic_error_group, { fg = pallettes.red.base, bg = pallettes.bg0 })
+hl(0, diagnostic_warn_group, { fg = pallettes.yellow.base, bg = pallettes.bg0  })
+hl(0, diagnostic_hint_group, { fg = pallettes.cyan.base, bg = pallettes.bg0  })
+hl(0, diagnostic_info_group, { fg = pallettes.orange.base, bg = pallettes.bg0  })
+
+local diagnostic_error_group_sign = 'DiagnosticSignError'
+local diagnostic_warn_group_sign = 'DiagnosticSignWarn'
+local diagnostic_hint_group_sign = 'DiagnosticSignhint'
+local diagnostic_info_group_sign = 'DiagnosticSignInfo'
+
+hl(0, diagnostic_error_group_sign, { fg = pallettes.red.base })
+hl(0, diagnostic_warn_group_sign, { fg = pallettes.red.base })
+hl(0, diagnostic_hint_group_sign, { fg = pallettes.red.base })
+hl(0, diagnostic_info_group_sign, { fg = pallettes.red.base })
 
 local get_error = function()
   return #vim.diagnostic.get(0, { severity = vim.diagnostic.severity.ERROR })
