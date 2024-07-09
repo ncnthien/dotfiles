@@ -3,7 +3,7 @@ import = ["~/.config/alacritty/nordfox.toml"]
 [window]
 startup_mode = "Maximized"
 decorations = "None"
-opacity = 1
+opacity = 0.75
 blur = true
 option_as_alt = "OnlyLeft"
 dynamic_padding = true
