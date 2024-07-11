@@ -4,6 +4,8 @@ return {
     { "nvim-telescope/telescope.nvim" }
   },
   config = function()
-    require("neoclip").setup()
+    require("neoclip").setup({
+      default_register = { '0' },
+    })
   end,
 }
