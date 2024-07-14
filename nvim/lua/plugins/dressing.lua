@@ -6,5 +6,6 @@ return {
         relative = "win"
       }
     })
-  end
+  end,
+  enabled = false
 }
