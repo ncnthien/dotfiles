@@ -35,9 +35,6 @@ map("n", "<leader>wo", "<C-W>o", { desc = "Close all other windows" })
 map("n", "<leader>wj", "<C-W>s", { desc = "Split window below" })
 map("n", "<leader>wl", "<C-W>v", { desc = "Split window right" })
 
--- Save file
-map({ "i", "x", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Save file" })
-
 -- Center screen when moving
 map("n", "<C-u>", "<C-u>zz", { desc = "Center when scroll up" })
 map("n", "<C-d>", "<C-d>zz", { desc = "Center when scroll down" })
