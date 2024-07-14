@@ -48,6 +48,16 @@ map({ "n", "x" }, "<Down>", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent =
 map({ "n", "x" }, "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 map({ "n", "x" }, "<Up>", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 
+-- Map space to .* in search command mode
+map("c", "<space>", function ()
+  local mode = vim.fn.getcmdtype()
+  if mode == "?" or mode == "/" then
+    return ".*"
+  else
+    return " "
+  end
+end, { expr = true })
+
 -- console.log current word (JS only)
 map(
   "n",
