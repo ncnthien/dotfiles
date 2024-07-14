@@ -8,7 +8,6 @@ return {
     { "<leader>glg", "<cmd>Git log<cr>",            desc = "Git log" },
     { "<leader>gb",  "<cmd>Git branch<cr>",         desc = "Git branch" },
     { "<leader>gc",  "<cmd>Git commit<cr>",         desc = "Git commit" },
-    { "<leader>gca", "<cmd>Git commit --amend<cr>", desc = "Git commit amend" },
     { "<leader>gp",  "<cmd>Git push<cr>",           desc = "Git push" },
     {
       "<leader>gpf",
