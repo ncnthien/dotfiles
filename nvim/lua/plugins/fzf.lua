@@ -9,16 +9,10 @@ return {
   },
   config = function()
     require("fzf-lua").setup({
-      winopts = {
-        on_create = function()
-          vim.keymap.set("t", "<M-j>", "<Down>", { silent = true })
-          vim.keymap.set("t", "<M-k>", "<Up>", { silent = true })
-        end,
-      },
       keymap = {
         builtin = {
-          ["<M-u>"] = "preview-page-up",
-          ["<M-d>"] = "preview-page-down",
+          ["<C-u>"] = "preview-page-up",
+          ["<C-d>"] = "preview-page-down",
         }
       }
     })

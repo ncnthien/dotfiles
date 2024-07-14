@@ -49,8 +49,8 @@ return {
     -- cmp
     local cmp = require('cmp')
     local mapping_insert = {
-      ['<M-k>'] = cmp.mapping(cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select, count = 1 }), { 'i', 'c' }),
-      ['<M-j>'] = cmp.mapping(cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select, count = 1 }), { 'i', 'c' }),
+      ['<C-k>'] = cmp.mapping(cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select, count = 1 }), { 'i', 'c' }),
+      ['<C-j>'] = cmp.mapping(cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select, count = 1 }), { 'i', 'c' }),
       ['<Tab>'] = cmp.mapping(cmp.mapping.confirm({ select = true, behavior = cmp.ConfirmBehavior.Insert }), { 'i', 'c' })
     }
     require('copilot_cmp').setup()
