@@ -18,6 +18,7 @@ return {
       fzf_colors = true,
       winopts = {
         border = "single",
+        fullscreen = true,
         preview = {
           title = false,
           scrollbar = false,

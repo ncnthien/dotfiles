@@ -39,6 +39,10 @@ map("n", "<leader>wl", "<C-W>v", { desc = "Split window right" })
 map("n", "<C-u>", "<C-u>zz", { desc = "Center when scroll up" })
 map("n", "<C-d>", "<C-d>zz", { desc = "Center when scroll down" })
 
+-- Center screen when jumping
+map("n", "<C-i>", "<C-i>zz", { desc = "Center when jump forward" })
+map("n", "<C-o>", "<C-o>zz", { desc = "Center when jump backward" })
+
 -- Clear search with <esc>
 map({ "i", "x", "n", "s" }, "<esc>", "<cmd>:silent! noh<cr><esc>", { desc = "Clear search" })
 
