@@ -9,20 +9,7 @@ return {
     { "<leader>gb",  "<cmd>Git branch<cr>",         desc = "Git branch" },
     { "<leader>gc",  "<cmd>Git commit<cr>",         desc = "Git commit" },
     { "<leader>gp",  "<cmd>Git push<cr>",           desc = "Git push" },
-    {
-      "<leader>gpf",
-      function()
-        vim.ui.input({ prompt = "Do you really want to force push? (y/n): " }, function(input)
-          if input == 'y' then
-            vim.cmd('Git push -f')
-          else
-            print('Force push cancelled.')
-          end
-        end)
-      end,
-      desc = "Git push force"
-    },
-    { "<leader>gd", ":Gvdiffsplit!",                 desc = "Git vertical diff" },
-    { "<leader>gl",  "<cmd>Git pull<cr>",            desc = "Git pull" },
+    { "<leader>gd",  ":Gvdiffsplit!",               desc = "Git vertical diff" },
+    { "<leader>gl",  "<cmd>Git pull<cr>",           desc = "Git pull" },
   }
 }
