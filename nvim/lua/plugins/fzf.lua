@@ -2,10 +2,11 @@ return {
   "ibhagwan/fzf-lua",
   name = "fzf",
   keys = {
-    { "<leader>ff", ":FzfLua files<cr>", { noremap = true, silent = true, description = "files" } },
-    { "<leader>fl", ":FzfLua live_grep<cr>", { noremap = true, silent = true, description = "live_grep" } },
-    { "<leader>fw", ":FzfLua grep_cword<cr>", { noremap = true, silent = true, description = "grep_cword" } },
-    { "<leader>ca", ":FzfLua lsp_code_actions previewer=false<cr>", { noremap = true, silent = true, description = "code action" } }
+    { "<leader>ff", "<cmd>FzfLua files<cr>", { noremap = true, silent = true, description = "files" } },
+    { "<leader>fl", "<cmd>FzfLua live_grep<cr>", { noremap = true, silent = true, description = "live_grep" } },
+    { "<leader>fw", "<cmd>FzfLua grep_cword<cr>", { noremap = true, silent = true, description = "grep_cword" } },
+    { "<leader>ca", "<cmd>FzfLua lsp_code_actions previewer=false<cr>", { noremap = true, silent = true, description = "code action" } },
+    { "<leader>fc", "<cmd>FzfLua grep search=>>>>>>><cr>", { noremap = true, silent = true, description = "search conflict" } },
   },
   config = function()
     require("fzf-lua").setup({
