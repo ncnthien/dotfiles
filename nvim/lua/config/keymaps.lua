@@ -1,7 +1,13 @@
 local map = vim.keymap.set
 
 -- Select all
-map("n", "<C-a>", "gg<S-v>G", { desc = "Select all" })
+map("n", "vig", "gg<S-v>G", { desc = "Select all" })
+
+-- Delete all
+map("n", "dig", "ggdG", { desc = "Delete all" })
+
+-- Yank all
+map("n", "yig", "ggyG", { desc = "Yank all" })
 
 -- Disable arrow keys
 map("n", "<Up>", "<Nop>")
