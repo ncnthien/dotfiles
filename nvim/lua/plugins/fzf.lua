@@ -10,6 +10,7 @@ return {
   },
   config = function()
     require("fzf-lua").setup({
+      file_ignore_patterns = { ".git/", "node_modules/", "e2e/" },
       keymap = {
         builtin = {
           ["<C-u>"] = "preview-page-up",
