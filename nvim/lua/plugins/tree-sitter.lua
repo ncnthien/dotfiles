@@ -9,7 +9,9 @@ return {
       indent = { enable = true },
       ensure_installed = {
         "typescript",
-        "tsx"
+        "tsx",
+        "markdown",
+        "markdown_inline"
       },
     })
   end,
