@@ -1,12 +1,8 @@
 local map = vim.keymap.set
 
--- Select all
+-- Select, delete, yank all
 map("n", "vig", "gg<S-v>G", { desc = "Select all" })
-
--- Delete all
 map("n", "dig", "ggdG", { desc = "Delete all" })
-
--- Yank all
 map("n", "yig", "ggyG", { desc = "Yank all" })
 
 -- Disable arrow keys
@@ -83,3 +79,28 @@ map(
   end,
   { noremap = true, silent = true, desc = "Log current word" }
 )
+
+-- add charracter surround
+local opposite_char = {
+  ["("] = ")",
+  ["["] = "]",
+  ["{"] = "}",
+  ["<"] = ">"
+}
+
+map(
+  { "n", "v" },
+  "gs",
+  function()
+    local char = vim.fn.getcharstr()
+    local opposite = opposite_char[char] or char
+    local register_name = 's'
+    local current_mode = vim.fn.mode()
+    local is_visual_mode = current_mode == 'v' or current_mode == 'V' or current_mode == '\22'
+
+    vim.cmd('normal! "' .. register_name .. 'd' .. (is_visual_mode and '' or 'iw'))
+    vim.cmd('normal! i' .. char .. vim.fn.getreg(register_name) .. opposite)
+  end,
+  { noremap = true, silent = true, desc = "Add surround" }
+)
+
