@@ -7,6 +7,7 @@ return {
     { "<leader>zn", "<cmd>ObsidianNew<cr>", desc = "ObsidianNew" },
     { "<leader>zs", "<cmd>ObsidianSearch<cr>", desc = "ObsidianSearch" },
     { "<leader>zw", "<cmd>ObsidianWorkspace<cr>", desc = "ObsidianWorkSpace" },
+    { "<leader>zd", "<cmd>ObsidianToday<cr>", desc = "ObsidianToday" },
   },
   dependencies = {
     "nvim-lua/plenary.nvim",
@@ -19,10 +20,22 @@ return {
     require("obsidian").setup({
       workspaces = {
         { name = "work", path = "~/vaults/work" },
-        { name = "ncnthien", path = "~/vaults/ncnthien" }
+        { name = "ncnthien", path = "~/vaults/ncnthien" },
+        { name = "personal", path = "~/vaults/personal" },
       },
       picker = {
         name = "fzf-lua",
+      },
+      daily_notes = {
+        folder = "dailies",
+        default_tags = { "daily" },
+        template = "daily.md",
+        date_format = "%y%m%d%a",
+        alias_format = "%y-%m-%d",
+      },
+      templates = {
+        folder = "templates",
+        date_format = "%Y-%m-%d-%a",
       },
       note_id_func = function(title)
         local suffix = ""
