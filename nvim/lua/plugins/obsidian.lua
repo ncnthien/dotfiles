@@ -7,7 +7,8 @@ return {
     { "<leader>zn", "<cmd>ObsidianNew<cr>", desc = "ObsidianNew" },
     { "<leader>zs", "<cmd>ObsidianSearch<cr>", desc = "ObsidianSearch" },
     { "<leader>zw", "<cmd>ObsidianWorkspace<cr>", desc = "ObsidianWorkSpace" },
-    { "<leader>zd", ":ObsidianToday", desc = "ObsidianToday" },
+    { "<leader>zd", "<cmd>ObsidianToday<cr>", desc = "ObsidianToday" },
+    { "<leader>zy", "<cmd>ObsidianYesterday<cr>", desc = "ObsidianYesterday" }
   },
   dependencies = {
     "nvim-lua/plenary.nvim",
