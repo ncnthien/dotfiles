@@ -3,6 +3,9 @@ return {
   keys = {
     { '<leader>o', '<cmd>Oil<CR>', { desc = 'Open Oil' } },
   },
+  dependencies = {
+    "nvim-tree/nvim-web-devicons"
+  },
   opts = {
     delete_to_trash = true,
     use_default_keymaps = false,
@@ -11,6 +14,9 @@ return {
       is_hidden_file = function(name)
         return vim.startswith(name, '.') or vim.endswith(name, 'node_modules')
       end,
+    },
+    columns = {
+      "icon",
     },
     keymaps = {
       ["g?"] = "actions.show_help",
