@@ -9,6 +9,7 @@ plugins=(
 )
 
 source $ZSH/oh-my-zsh.sh
+source <(fzf --zsh)
 
 alias v="nvim"
 alias l="lsd -lha"
