@@ -32,11 +32,8 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
 
     local opts = { buffer = ev.buf }
-    vim.keymap.set('n', '<leader>cD', vim.lsp.buf.declaration, opts)
-    vim.keymap.set('n', '<leader>cd', vim.lsp.buf.definition, opts)
     vim.keymap.set('n', '<leader>cx', vim.lsp.buf.hover, opts)
     vim.keymap.set('n', '<leader>cr', vim.lsp.buf.rename, opts)
-    vim.keymap.set('n', '<leader>ce', vim.lsp.buf.references, opts)
     vim.keymap.set('n', '<leader>cf', function()
       vim.lsp.buf.format { async = true }
     end, opts)
