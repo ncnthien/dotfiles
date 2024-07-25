@@ -9,7 +9,7 @@ return {
     { "<leader>fl", "<cmd>FzfLua live_grep<cr>", { noremap = true, silent = true, description = "live_grep" } },
     { "<leader>fw", "<cmd>FzfLua grep_cword<cr>", { noremap = true, silent = true, description = "grep_cword" } },
     { "<leader>ca", "<cmd>FzfLua lsp_code_actions previewer=false<cr>", { noremap = true, silent = true, description = "code action" } },
-    { "<leader>fc", "<cmd>FzfLua grep search=>>>>>>><cr>", { noremap = true, silent = true, description = "search conflict" } },
+    { "<leader>fc", "<cmd>FzfLua grep search=<<<<<<<<cr>", { noremap = true, silent = true, description = "search conflict" } },
   },
   config = function()
     require("fzf-lua").setup({
