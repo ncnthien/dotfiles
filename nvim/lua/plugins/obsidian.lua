@@ -49,6 +49,21 @@ return {
         end
         return tostring(os.date("%y%m%d%H%M")) .. "-" .. suffix
       end,
+      note_frontmatter_func = function(note)
+        if note.title then
+          note:add_alias(note.title)
+        end
+
+        local out = { id = note.id, aliases = note.aliases, hubs = {} }
+
+        if note.metadata ~= nil and not vim.tbl_isempty(note.metadata) then
+          for k, v in pairs(note.metadata) do
+            out[k] = v
+          end
+        end
+
+        return out
+      end,
     })
   end,
 }
