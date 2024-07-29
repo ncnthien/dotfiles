@@ -11,7 +11,6 @@ return {
     { "<leader>fc", "<cmd>FzfLua grep search=<<<<<<<<cr>", { noremap = true, silent = true, description = "search conflict" } },
     { "<leader>fv", "<cmd>FzfLua grep_visual<cr>", { noremap = true, silent = true, description = "search visual selection" } },
     { "<leader>fa", "<cmd>FzfLua lsp_code_actions previewer=false<cr>", { noremap = true, silent = true, description = "code action" } },
-    { "<leader>fd", "<cmd>FzfLua lsp_definitions jump_to_single_result=true<cr>", { noremap = true, silent = true, description = "definition" } },
     { "<leader>fe", "<cmd>FzfLua lsp_references<cr>", { noremap = true, silent = true, description = "references" } },
     { "<leader>fD", "<cmd>FzfLua lsp_declarations jump_to_single_result=true<cr>", { noremap = true, silent = true, description = "declarations" } },
   },
