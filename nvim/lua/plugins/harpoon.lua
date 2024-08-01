@@ -28,7 +28,7 @@ return {
           return vim.loop.cwd()
         end,
         select = function(list_item)
-          vim.cmd("!switch-env " .. list_item.value)
+          vim.cmd("!switch-env " .. list_item)
         end
       }
     })
