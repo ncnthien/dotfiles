@@ -3,7 +3,53 @@ return {
   branch = "harpoon2",
   dependencies = { "nvim-lua/plenary.nvim" },
   config = function()
-    require("harpoon"):setup()
+    local harpoon = require("harpoon")
+
+    harpoon:setup({
+      ["env"] = {
+        create_list_item = function (_, name)
+          return {
+            value = name,
+            context = {}
+          }
+        end,
+        display = function(list_item)
+          return list_item
+        end,
+        equals = function(list_item_a, list_item_b)
+          if list_item_a == nil and list_item_b == nil then
+            return true
+          elseif list_item_a == nil or list_item_b == nil then
+            return false
+          end
+          return list_item_a== list_item_b
+        end,
+        get_root_dir = function()
+          return vim.loop.cwd()
+        end,
+        select = function(list_item)
+          vim.cmd("!switch-env " .. list_item.value)
+        end
+      }
+    })
+
+    vim.api.nvim_create_user_command(
+      "HarpoonEnv",
+      function()
+        harpoon.ui:toggle_quick_menu(harpoon:list("env"))
+      end,
+      {}
+    )
+
+    vim.api.nvim_create_user_command(
+      "HarpoonEnvAdd",
+      function(opts)
+        local env = opts.fargs[1]
+        harpoon:list("env"):add(env)
+      end,
+      { nargs = 1 }
+    )
+
   end,
   keys = {
     { "<leader>hh", function() local harpoon = require("harpoon") harpoon.ui:toggle_quick_menu(harpoon:list()) end, desc = "Harpoon" },

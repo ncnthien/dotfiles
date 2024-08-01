@@ -7,27 +7,3 @@ vim.api.nvim_create_user_command(
   end,
   { nargs = "*" }
 )
-
-vim.api.nvim_create_user_command(
-  "Dev",
-  function ()
-    vim.cmd("silent !switch-env dev")
-  end,
-  { nargs = "*" }
-)
-
-vim.api.nvim_create_user_command(
-  "Uat",
-  function ()
-    vim.cmd("silent !switch-env uat")
-  end,
-  { nargs = "*" }
-)
-
-vim.api.nvim_create_user_command(
-  "Sit",
-  function ()
-    vim.cmd("silent !switch-env sit")
-  end,
-  { nargs = "*" }
-)
