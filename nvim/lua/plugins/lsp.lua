@@ -75,6 +75,10 @@ return {
       experimental = {
         ghost_text = true
       },
+      performance = {
+        debounce = 0,
+        throttle = 0
+      }
     })
     cmp.setup.cmdline({ '/', '?' }, {
       mapping = cmp.mapping.preset.cmdline(mapping_insert),
