@@ -37,11 +37,11 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.keymap.set('n', '<leader>cf', function()
       vim.lsp.buf.format { async = true }
     end, opts)
-    vim.keymap.set('n', '<leader>cd', vim.lsp.buf.definition, opts)
+    vim.keymap.set('n', 'K', vim.lsp.buf.definition, opts)
     vim.keymap.set('n', '<leader>cq', quickfix, opts)
     vim.keymap.set('n', '<leader>cs', vim.diagnostic.open_float, opts)
-    vim.keymap.set('n', '<leader>cn', vim.diagnostic.goto_next, opts)
-    vim.keymap.set('n', '<leader>cp', vim.diagnostic.goto_prev, opts)
+    vim.keymap.set('n', 'tn', vim.diagnostic.goto_next, opts)
+    vim.keymap.set('n', 'tp', vim.diagnostic.goto_prev, opts)
 
     local signs = {
       Error = " ",
