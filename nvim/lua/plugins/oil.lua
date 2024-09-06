@@ -9,6 +9,10 @@ return {
   opts = {
     delete_to_trash = true,
     use_default_keymaps = false,
+    watch_for_changes = true,
+    lsp_file_methods = {
+      autosave_changes = true
+    },
     view_options = {
       show_hidden = true,
       is_hidden_file = function(name)
