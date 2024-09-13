@@ -64,4 +64,5 @@ return {
     { "<leader>8", function() require("harpoon"):list():select(8) end, desc = "Harpoon select 8" },
     { "<leader>9", function() vim.cmd([[ b# ]]) end, desc = "Select previous buffer" },
   },
+  cmd = "HarpoonEnv"
 }
