@@ -71,3 +71,13 @@ vim.api.nvim_create_autocmd("TextYankPost", {
     vim.highlight.on_yank({ timeout = 50 })
   end,
 })
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "qf",
+  callback = function(event)
+    local opts = { buffer = event.buf, silent = true }
+    vim.keymap.set('n', 'j', '<cmd>cn<cr>zz<cmd>wincmd p<cr>', opts)
+    vim.keymap.set('n', 'k', '<cmd>cp<cr>zz<cmd>wincmd p<cr>', opts)
+    vim.keymap.set('n', '<cr>', '<cr><c-w>o', opts)
+  end,
+})
