@@ -3,10 +3,10 @@ local function augroup(name)
 end
 
 local function quickfix()
-    vim.lsp.buf.code_action({
-        filter = function(a) return a.isPreferred end,
-        apply = true
-    })
+  vim.lsp.buf.code_action({
+    filter = function(a) return a.isPreferred end,
+    apply = true
+  })
 end
 
 vim.api.nvim_create_autocmd("BufReadPost", {
@@ -40,8 +40,14 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.keymap.set('n', 'K', vim.lsp.buf.definition, opts)
     vim.keymap.set('n', '<leader>cq', quickfix, opts)
     vim.keymap.set('n', '<leader>cs', vim.diagnostic.open_float, opts)
-    vim.keymap.set('n', 'tn', vim.diagnostic.goto_next, opts)
-    vim.keymap.set('n', 'tp', vim.diagnostic.goto_prev, opts)
+    vim.keymap.set('n', 'tn', function ()
+      vim.diagnostic.goto_next()
+      vim.cmd('normal! zz')
+    end , opts)
+    vim.keymap.set('n', 'tp', function ()
+      vim.diagnostic.goto_prev()
+      vim.cmd('normal! zz')
+    end, opts)
 
     local signs = {
       Error = " ",
