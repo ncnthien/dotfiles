@@ -15,9 +15,6 @@ map("i", "<Down>", "<Nop>")
 map("i", "<Left>", "<Nop>")
 map("i", "<Right>", "<Nop>")
 
--- Quit all
-map("n", "<leader>qq", "<cmd>qa<cr>", { desc = "Quit all" })
-
 -- Move to window
 map("n", "<C-h>", "<C-w>h", { desc = "Go to left window" })
 map("n", "<C-j>", "<C-w>j", { desc = "Go to lower window" })
