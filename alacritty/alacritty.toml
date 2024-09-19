@@ -3,7 +3,6 @@ import = ["~/.config/alacritty/carbonfox.toml"]
 [window]
 startup_mode = "Maximized"
 decorations = "None"
-opacity = 0.9
 option_as_alt = "OnlyLeft"
 dynamic_padding = true
 
