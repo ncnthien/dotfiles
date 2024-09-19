@@ -1,11 +1,9 @@
-import = ["~/.config/alacritty/nordfox.toml"]
+import = ["~/.config/alacritty/carbonfox.toml"]
 
 [window]
 startup_mode = "Maximized"
 decorations = "None"
 opacity = 0.9
-# opacity = 0.75
-# blur = true
 option_as_alt = "OnlyLeft"
 dynamic_padding = true
 

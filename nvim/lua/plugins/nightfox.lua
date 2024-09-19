@@ -9,7 +9,7 @@ return {
         transparent = true,
       }
     })
-    vim.cmd([[colorscheme nordfox]])
+    vim.cmd([[colorscheme carbonfox]])
     vim.api.nvim_set_hl(0, "NormalFloat", { bg = "NONE" })
   end
 }
