@@ -31,7 +31,9 @@ return {
         scrollbar = false,
         winopts = {
           number = false
-        }
+        },
+        vertical = "down:65%",
+        flip_columns = 126,
       }
     },
     files = {
