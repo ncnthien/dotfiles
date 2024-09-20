@@ -2,7 +2,7 @@ local function color(group_name, item)
   return '%#' .. group_name .. '#' .. item .. '%*'
 end
 
-local pallettes = require('nightfox.palette').load('nordfox')
+local pallettes = require('nightfox.palette').load('carbonfox')
 local hl = vim.api.nvim_set_hl
 local diagnostic_error_group = 'DiagnosticError'
 local diagnostic_warn_group = 'DiagnosticWarn'
