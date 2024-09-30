@@ -36,12 +36,6 @@ return {
         flip_columns = 126,
       }
     },
-    files = {
-      cwd_prompt = false,
-      formatter = "path.filename_first",
-    },
-    grep = {
-      formatter = "path.filename_first",
-    }
+    files = { cwd_prompt = false }
   },
 }
