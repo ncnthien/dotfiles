@@ -20,7 +20,8 @@ return {
         "lua_ls",
         "tsserver",
         "eslint",
-        "rust_analyzer"
+        "rust_analyzer",
+        "astro"
       },
       handlers = {
         function(server_name)
