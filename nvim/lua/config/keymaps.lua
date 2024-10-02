@@ -43,6 +43,8 @@ map("n", "<C-i>", "<C-i>zz", { desc = "Center when jump forward" })
 map("n", "<C-o>", "<C-o>zz", { desc = "Center when jump backward" })
 
 -- Center screen when move to next/prev result
+map("n", "*", "*Nzz", { desc = "Center when next result with *" })
+map("n", "#", "#Nzz", { desc = "Center when next result with #" })
 map("n", "n", "nzz", { desc = "Center when next result" })
 map("n", "N", "Nzz", { desc = "Center when prev result" })
 
