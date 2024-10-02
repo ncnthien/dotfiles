@@ -20,7 +20,8 @@ return {
         "lua_ls",
         "vtsls",
         "eslint",
-        "astro"
+        "astro",
+        "tailwindcss"
       },
       handlers = {
         function(server_name)
