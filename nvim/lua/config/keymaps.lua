@@ -42,6 +42,10 @@ map("n", "<C-d>", "<C-d>zz", { desc = "Center when scroll down" })
 map("n", "<C-i>", "<C-i>zz", { desc = "Center when jump forward" })
 map("n", "<C-o>", "<C-o>zz", { desc = "Center when jump backward" })
 
+-- Center screen when move to next/prev result
+map("n", "n", "nzz", { desc = "Center when next result" })
+map("n", "N", "Nzz", { desc = "Center when prev result" })
+
 -- Clear search with <esc>
 map({ "i", "x", "n", "s" }, "<esc>", "<cmd>:silent! noh<cr><esc>", { desc = "Clear search" })
 
