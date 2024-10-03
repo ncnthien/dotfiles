@@ -27,6 +27,7 @@ return {
         function(server_name)
           local lspconfig = require("lspconfig")
           local capabilities = require("cmp_nvim_lsp").default_capabilities()
+
           lspconfig[server_name].setup({
             capabilities = capabilities,
             handlers = {
@@ -34,9 +35,26 @@ return {
               ['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = "single" }),
             },
           })
+
+          lspconfig.vtsls.setup({
+            capabilities = capabilities,
+            settings = {
+              typescript = {
+                preferences = {
+                  importModuleSpecifier = "non-relative"
+                }
+              }
+            },
+            handlers = {
+              ['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, { border = "single" }),
+              ['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = "single" }),
+            },
+          })
+
         end,
       }
     })
+
     require('lspconfig').lua_ls.setup({
       settings = {
         Lua = {
