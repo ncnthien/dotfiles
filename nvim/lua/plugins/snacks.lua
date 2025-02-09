@@ -26,6 +26,11 @@ local dashboard = {
 
 local exclue = { ".git/", "node_modules/", "e2e/" }
 
+local words = {
+  enabled = true,
+  debounce = 10
+}
+
 return {
   "folke/snacks.nvim",
   priority = 1000,
@@ -33,6 +38,7 @@ return {
   opts = {
     picker = picker,
     dashboard = dashboard,
+    words = words
   },
   keys = {
     { "<leader>ff", function() Snacks.picker.files({ exclude = exclue }) end, desc = "Files" },
