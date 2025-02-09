@@ -24,11 +24,6 @@ local dashboard = {
   },
 }
 
-local indent = {
-  enabled = true,
-  animate = { enabled = false }
-}
-
 return {
   "folke/snacks.nvim",
   priority = 1000,
@@ -36,7 +31,6 @@ return {
   opts = {
     picker = picker,
     dashboard = dashboard,
-    indent = indent
   },
   keys = {
     { "<leader>ff", function() Snacks.picker.files({ exclude = { ".git/", "node_modules/", "e2e/" } }) end, desc = "Files" },
