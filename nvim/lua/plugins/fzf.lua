@@ -38,4 +38,5 @@ return {
     },
     files = { cwd_prompt = false }
   },
+  enabled = false
 }
