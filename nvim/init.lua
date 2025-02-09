@@ -15,7 +15,8 @@ vim.g.mapleader = " "
 
 require("lazy").setup({
   spec = { { import = "plugins" } },
-  ui = { border = "single" }
+  ui = { border = "single" },
+  change_detection = { notify = false }
 })
 
 require("config.options")
