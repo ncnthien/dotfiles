@@ -1,24 +1,36 @@
+local picker = {
+  enabled = true,
+  ui_select = false,
+  layout = {
+    fullscreen = true
+  },
+  win = {
+    input = {
+      keys = {
+        ["<c-u>"] = { "preview_scroll_up", mode = { "i", "n" } },
+        ["<c-d>"] = { "preview_scroll_down", mode = { "i", "n" } },
+        ["<Esc>"] = { "close", mode = { "n", "i" } }
+      }
+    }
+  },
+}
+
+local dashboard = {
+  enabled = true,
+  sections = {
+    { section = "header" },
+    { section = "keys", gap = 1, padding = 1 },
+    { section = "startup" },
+  },
+}
+
 return {
   "folke/snacks.nvim",
   priority = 1000,
   lazy = false,
   opts = {
-    picker = {
-      enabled = true,
-      ui_select = false,
-      layout = {
-        fullscreen = true
-      },
-      win = {
-        input = {
-          keys = {
-            ["<c-u>"] = { "preview_scroll_up", mode = { "i", "n" } },
-            ["<c-d>"] = { "preview_scroll_down", mode = { "i", "n" } },
-            ["<Esc>"] = { "close", mode = { "n", "i" } }
-          }
-        }
-      },
-    }
+    picker = picker,
+    dashboard = dashboard
   },
   keys = {
     { "<leader>ff", function() Snacks.picker.files({ exclude = { ".git/", "node_modules/", "e2e/" } }) end, desc = "Files" },
