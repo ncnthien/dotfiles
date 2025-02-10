@@ -43,7 +43,7 @@ return {
   keys = {
     { "<leader>ff", function() Snacks.picker.files({ exclude = exclue }) end, desc = "Files" },
     { "<leader>fl", function() Snacks.picker.grep({ exclude = exclue }) end, desc = "Grep" },
-    { "<leader>sw", function() Snacks.picker.grep_word({ exclude = exclue }) end, desc = "Visual selection or word", mode = { "n", "x" } },
+    { "<leader>fw", function() Snacks.picker.grep_word({ exclude = exclue }) end, desc = "Visual selection or word", mode = { "n", "x" } },
     { "<leader>fc", function() Snacks.picker.grep_word({
       search = function()
         return "<<<<<<<"
