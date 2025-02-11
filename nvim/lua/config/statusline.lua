@@ -4,15 +4,26 @@ end
 
 local pallettes = require('nightfox.palette').load('duskfox')
 local hl = vim.api.nvim_set_hl
+
 local diagnostic_error_group = 'DiagnosticError'
 local diagnostic_warn_group = 'DiagnosticWarn'
 local diagnostic_hint_group = 'DiagnosticHint'
 local diagnostic_info_group = 'DiagnosticInfo'
 
-hl(0, diagnostic_error_group, { fg = pallettes.red.base, bg = pallettes.bg0 })
-hl(0, diagnostic_warn_group, { fg = pallettes.yellow.base, bg = pallettes.bg0  })
-hl(0, diagnostic_hint_group, { fg = pallettes.cyan.base, bg = pallettes.bg0  })
-hl(0, diagnostic_info_group, { fg = pallettes.orange.base, bg = pallettes.bg0  })
+hl(0, diagnostic_error_group, { fg = pallettes.red.base })
+hl(0, diagnostic_warn_group, { fg = pallettes.yellow.base })
+hl(0, diagnostic_hint_group, { fg = pallettes.cyan.base })
+hl(0, diagnostic_info_group, { fg = pallettes.orange.base })
+
+local diagnostic_error_group_status = 'DiagnosticErrorStatus'
+local diagnostic_warn_group_status = 'DiagnosticWarnStatus'
+local diagnostic_hint_group_status = 'DiagnosticHintStatus'
+local diagnostic_info_group_status = 'DiagnosticInfoStatus'
+
+hl(0, diagnostic_error_group_status, { fg = pallettes.red.base, bg = pallettes.bg0 })
+hl(0, diagnostic_warn_group_status, { fg = pallettes.yellow.base, bg = pallettes.bg0 })
+hl(0, diagnostic_hint_group_status, { fg = pallettes.cyan.base, bg = pallettes.bg0 })
+hl(0, diagnostic_info_group_status, { fg = pallettes.orange.base, bg = pallettes.bg0 })
 
 local diagnostic_error_group_sign = 'DiagnosticSignError'
 local diagnostic_warn_group_sign = 'DiagnosticSignWarn'
@@ -53,10 +64,10 @@ function Get_status_line()
   local hints = get_hint()
   local infos = get_info()
 
-  local errors_message = errors > 0 and string.format('%s',color(diagnostic_error_group, string.format(' %s', errors))) or ''
-  local warns_message = warns > 0 and string.format('%s', color(diagnostic_warn_group, string.format('  %s', warns))) or ''
-  local hints_message = hints > 0 and string.format('%s', color(diagnostic_hint_group, string.format('  %s', hints))) or ''
-  local infos_message = infos > 0 and string.format('%s', color(diagnostic_info_group, string.format('  %s', infos))) or ''
+  local errors_message = errors > 0 and string.format('%s', color(diagnostic_error_group_status, string.format(' %s', errors))) or ''
+  local warns_message = warns > 0 and string.format('%s', color(diagnostic_warn_group_status, string.format('  %s', warns))) or ''
+  local hints_message = hints > 0 and string.format('%s', color(diagnostic_hint_group_status, string.format('  %s', hints))) or ''
+  local infos_message = infos > 0 and string.format('%s', color(diagnostic_info_group_status, string.format('  %s', infos))) or ''
 
   return string.format('%s%s%s%s%s%s%s%s %s', '[%{FugitiveHead()}] ', '%f', '%m', '%=', errors_message,
     warns_message, hints_message, infos_message, '%{&filetype}')
