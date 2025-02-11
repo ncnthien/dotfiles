@@ -4,6 +4,13 @@ local picker = {
   layout = {
     fullscreen = true
   },
+  sources = {
+    explorer = {
+      enabled = true,
+      layout = { preset = "sidebar", fullscreen = false },
+      replace_netrw = true
+    }
+  },
   win = {
     input = {
       keys = {
@@ -56,5 +63,6 @@ return {
     }) end, desc = "Search conflict" },
     { "<leader>fa", function() vim.lsp.buf.code_action() end, silent = true, desc = "Code action" },
     { "<leader>fe", function() Snacks.picker.lsp_references() end, nowait = true, desc = "References" },
+    { "<leader>e", function() Snacks.explorer() end, desc = "Explorer" }
   }
 }
