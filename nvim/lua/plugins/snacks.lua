@@ -31,6 +31,10 @@ local words = {
   debounce = 10
 }
 
+local scope = {
+  enabled = true
+}
+
 return {
   "folke/snacks.nvim",
   priority = 1000,
@@ -38,7 +42,8 @@ return {
   opts = {
     picker = picker,
     dashboard = dashboard,
-    words = words
+    words = words,
+    scope = scope
   },
   keys = {
     { "<leader>ff", function() Snacks.picker.files({ exclude = exclue }) end, desc = "Files" },
