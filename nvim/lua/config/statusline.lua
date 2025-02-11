@@ -15,10 +15,10 @@ hl(0, diagnostic_warn_group, { fg = pallettes.yellow.base })
 hl(0, diagnostic_hint_group, { fg = pallettes.cyan.base })
 hl(0, diagnostic_info_group, { fg = pallettes.orange.base })
 
-local diagnostic_error_group_status = 'DiagnosticErrorStatus'
-local diagnostic_warn_group_status = 'DiagnosticWarnStatus'
-local diagnostic_hint_group_status = 'DiagnosticHintStatus'
-local diagnostic_info_group_status = 'DiagnosticInfoStatus'
+local diagnostic_error_group_status = 'DiagnosticStatusError'
+local diagnostic_warn_group_status = 'DiagnosticStatusWarn'
+local diagnostic_hint_group_status = 'DiagnosticStatusHint'
+local diagnostic_info_group_status = 'DiagnosticStatusInfo'
 
 hl(0, diagnostic_error_group_status, { fg = pallettes.red.base, bg = pallettes.bg0 })
 hl(0, diagnostic_warn_group_status, { fg = pallettes.yellow.base, bg = pallettes.bg0 })
@@ -27,7 +27,7 @@ hl(0, diagnostic_info_group_status, { fg = pallettes.orange.base, bg = pallettes
 
 local diagnostic_error_group_sign = 'DiagnosticSignError'
 local diagnostic_warn_group_sign = 'DiagnosticSignWarn'
-local diagnostic_hint_group_sign = 'DiagnosticSignhint'
+local diagnostic_hint_group_sign = 'DiagnosticSignHint'
 local diagnostic_info_group_sign = 'DiagnosticSignInfo'
 
 hl(0, diagnostic_error_group_sign, { fg = pallettes.red.base })
@@ -37,7 +37,7 @@ hl(0, diagnostic_info_group_sign, { fg = pallettes.orange.base })
 
 local diagnostic_error_group_floating = 'DiagnosticFloatingError'
 local diagnostic_warn_group_floating = 'DiagnosticFloatingWarn'
-local diagnostic_hint_group_floating = 'DiagnosticFloatinghint'
+local diagnostic_hint_group_floating = 'DiagnosticFloatingHint'
 local diagnostic_info_group_floating = 'DiagnosticFloatingInfo'
 
 hl(0, diagnostic_error_group_floating, { fg = pallettes.red.base })
