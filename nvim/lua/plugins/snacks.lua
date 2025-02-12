@@ -20,6 +20,11 @@ local picker = {
       }
     }
   },
+  formatters = {
+    file = {
+      filename_first = true, -- display filename before the file path
+    },
+  }
 }
 
 local dashboard = {
