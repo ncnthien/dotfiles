@@ -22,7 +22,7 @@ local picker = {
   },
   formatters = {
     file = {
-      filename_first = true,
+      -- filename_first = true,
       truncate = 100
     },
   }
