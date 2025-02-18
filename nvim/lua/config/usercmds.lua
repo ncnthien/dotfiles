@@ -14,5 +14,18 @@ vim.api.nvim_create_user_command(
     local environment = opts.args
     vim.cmd("!switch-env " .. environment)
   end,
-  { nargs = 1 }
+  {
+    nargs = 1,
+    desc = "Set environment",
+    complete = function(ArgLead)
+      local environments = { "sit", "uat", "dev" }
+      local matches = {}
+      for _, env in ipairs(environments) do
+        if env:find(ArgLead, 1, true) == 1 then
+          table.insert(matches, env)
+        end
+      end
+      return matches
+    end
+  }
 )
