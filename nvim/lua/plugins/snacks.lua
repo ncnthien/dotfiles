@@ -8,7 +8,9 @@ local picker = {
     explorer = {
       enabled = true,
       layout = { preset = "sidebar", fullscreen = false },
-      replace_netrw = true
+      replace_netrw = true,
+      hidden = true,
+      ignored = true
     }
   },
   win = {
