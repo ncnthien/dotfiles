@@ -5,6 +5,7 @@ return {
   event = { "BufReadPost", "BufNewFile" },
   cmd = "Grapple",
   keys = {
+    { "<leader>m", "<cmd>Grapple toggle_tags<cr>", desc = "Grapple open tag tags window" },
     { "ma", "<cmd>Grapple tag index=1<cr>", desc = "Grapple tag with index=1" },
     { "ms", "<cmd>Grapple tag index=2<cr>", desc = "Grapple tag with index=2" },
     { "md", "<cmd>Grapple tag index=3<cr>", desc = "Grapple tag with index=3" },
