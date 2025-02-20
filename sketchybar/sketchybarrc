@@ -14,12 +14,12 @@ default=(
   label.padding_left=4
   label.padding_right=4
 )
+
 sketchybar --default "${default[@]}"
 
+sketchybar --add event aerospace_workspace_change
+
 for sid in $(aerospace list-workspaces --all); do
-    if [ sid = 10 ]; then
-      continue
-    fi
     sketchybar --add item space.$sid left \
         --subscribe space.$sid aerospace_workspace_change \
         --set space.$sid \
@@ -28,6 +28,7 @@ for sid in $(aerospace list-workspaces --all); do
         background.height=20 \
         background.drawing=off \
         label="$sid" \
+        label.padding_right=14\
         click_script="aerospace workspace $sid" \
         script="$CONFIG_DIR/plugins/aerospace.sh $sid"
 done
@@ -50,6 +51,4 @@ sketchybar --add item volume right \
 
 ##### Force all scripts to run the first time (never do this in a script) #####
 sketchybar --update
-
-sketchybar --add event aerospace_workspace_change
 
