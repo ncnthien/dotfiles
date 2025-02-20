@@ -2,10 +2,9 @@ import = ["~/.config/alacritty/duskfox.toml"]
 
 [window]
 startup_mode = "Maximized"
-decorations = "None"
+decorations = "Buttonless"
 option_as_alt = "OnlyLeft"
 dynamic_padding = true
-opacity = 0.8
 
 [font]
 normal = { family = "JetBrainsMono Nerd Font" }
