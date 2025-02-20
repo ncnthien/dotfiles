@@ -1,6 +1,6 @@
 PLUGIN_DIR="$CONFIG_DIR/plugins"
 
-sketchybar --bar position=top height=36 blur_radius=30 color=0x40000000 margin=12 y_offset=12 corner_radius=8
+sketchybar --bar position=top height=36 color=0x60000000 margin=12 y_offset=12 corner_radius=8
 
 default=(
   padding_left=5
