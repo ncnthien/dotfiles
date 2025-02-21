@@ -29,3 +29,15 @@ vim.api.nvim_create_user_command(
     end
   }
 )
+
+vim.api.nvim_create_user_command(
+  "Token",
+  function(opts)
+    local token = opts.args
+    vim.cmd("!token " .. token)
+  end,
+  {
+    nargs = 1,
+    desc = "Set token"
+  }
+)
