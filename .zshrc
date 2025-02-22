@@ -22,5 +22,6 @@ alias v="nvim"
 alias l="lsd -lha"
 alias ls="lsd"
 alias dot="cd ~/dotfiles"
+alias bin="cd ~/bin"
 
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
