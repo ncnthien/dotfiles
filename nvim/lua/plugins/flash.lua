@@ -5,6 +5,11 @@ return {
     labels = "asdfghjklwertyuioxcvbn",
     label = {
       uppercase = false,
+    },
+    modes = {
+      char = {
+        enabled = false
+      }
     }
   },
   keys = {
