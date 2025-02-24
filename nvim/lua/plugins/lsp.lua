@@ -88,9 +88,10 @@ return {
         { name = 'copilot' },
         { name = 'nvim_lsp' },
         { name = 'luasnip' },
+        { name = 'codecompanion' },
       }, {
-          { name = 'buffer' },
-        }),
+        { name = 'buffer' },
+      }),
       experimental = {
         ghost_text = true
       },
