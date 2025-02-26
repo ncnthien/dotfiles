@@ -23,6 +23,13 @@ return {
           llm = function (adapter)
             return adapter.formatted_name
           end
+        },
+        slash_commands = {
+          ["file"] = {
+            opts = {
+              provider = "snacks"
+            }
+          }
         }
       }
     },
