@@ -10,7 +10,8 @@ local picker = {
       layout = { preset = "sidebar", fullscreen = false },
       replace_netrw = true,
       hidden = true,
-      ignored = true
+      ignored = true,
+      auto_close = true
     }
   },
   win = {
