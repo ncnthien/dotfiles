@@ -1,5 +1,6 @@
 return {
   "EdenEast/nightfox.nvim",
+  enabled = false,
   name = "nightfox",
   lazy = "false",
   priority = 1000,

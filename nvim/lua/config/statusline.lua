@@ -2,7 +2,15 @@ local function color(group_name, item)
   return '%#' .. group_name .. '#' .. item .. '%*'
 end
 
-local pallettes = require('nightfox.palette').load('duskfox')
+-- Gruvbox light palette
+local palette = {
+  bg0 = "#d5c4a1",    -- light background
+  red = "#cc241d",    -- errors
+  yellow = "#d65d0e", -- warnings
+  green = "#98971a",  -- hints
+  blue = "#458588",   -- info
+}
+
 local hl = vim.api.nvim_set_hl
 
 local diagnostic_error_group = 'DiagnosticError'
@@ -10,40 +18,40 @@ local diagnostic_warn_group = 'DiagnosticWarn'
 local diagnostic_hint_group = 'DiagnosticHint'
 local diagnostic_info_group = 'DiagnosticInfo'
 
-hl(0, diagnostic_error_group, { fg = pallettes.red.base })
-hl(0, diagnostic_warn_group, { fg = pallettes.yellow.base })
-hl(0, diagnostic_hint_group, { fg = pallettes.cyan.base })
-hl(0, diagnostic_info_group, { fg = pallettes.orange.base })
+hl(0, diagnostic_error_group, { fg = palette.red })
+hl(0, diagnostic_warn_group, { fg = palette.yellow })
+hl(0, diagnostic_hint_group, { fg = palette.green })
+hl(0, diagnostic_info_group, { fg = palette.blue })
 
 local diagnostic_error_group_status = 'DiagnosticStatusError'
 local diagnostic_warn_group_status = 'DiagnosticStatusWarn'
 local diagnostic_hint_group_status = 'DiagnosticStatusHint'
 local diagnostic_info_group_status = 'DiagnosticStatusInfo'
 
-hl(0, diagnostic_error_group_status, { fg = pallettes.red.base, bg = pallettes.bg0 })
-hl(0, diagnostic_warn_group_status, { fg = pallettes.yellow.base, bg = pallettes.bg0 })
-hl(0, diagnostic_hint_group_status, { fg = pallettes.cyan.base, bg = pallettes.bg0 })
-hl(0, diagnostic_info_group_status, { fg = pallettes.orange.base, bg = pallettes.bg0 })
+hl(0, diagnostic_error_group_status, { fg = palette.red, bg = palette.bg0 })
+hl(0, diagnostic_warn_group_status, { fg = palette.yellow, bg = palette.bg0 })
+hl(0, diagnostic_hint_group_status, { fg = palette.green, bg = palette.bg0 })
+hl(0, diagnostic_info_group_status, { fg = palette.blue, bg = palette.bg0 })
 
 local diagnostic_error_group_sign = 'DiagnosticSignError'
 local diagnostic_warn_group_sign = 'DiagnosticSignWarn'
 local diagnostic_hint_group_sign = 'DiagnosticSignHint'
 local diagnostic_info_group_sign = 'DiagnosticSignInfo'
 
-hl(0, diagnostic_error_group_sign, { fg = pallettes.red.base })
-hl(0, diagnostic_warn_group_sign, { fg = pallettes.yellow.base })
-hl(0, diagnostic_hint_group_sign, { fg = pallettes.cyan.base })
-hl(0, diagnostic_info_group_sign, { fg = pallettes.orange.base })
+hl(0, diagnostic_error_group_sign, { fg = palette.red })
+hl(0, diagnostic_warn_group_sign, { fg = palette.yellow })
+hl(0, diagnostic_hint_group_sign, { fg = palette.green })
+hl(0, diagnostic_info_group_sign, { fg = palette.blue })
 
 local diagnostic_error_group_floating = 'DiagnosticFloatingError'
 local diagnostic_warn_group_floating = 'DiagnosticFloatingWarn'
 local diagnostic_hint_group_floating = 'DiagnosticFloatingHint'
 local diagnostic_info_group_floating = 'DiagnosticFloatingInfo'
 
-hl(0, diagnostic_error_group_floating, { fg = pallettes.red.base })
-hl(0, diagnostic_warn_group_floating, { fg = pallettes.yellow.base })
-hl(0, diagnostic_hint_group_floating, { fg = pallettes.cyan.base })
-hl(0, diagnostic_info_group_floating, { fg = pallettes.orange.base })
+hl(0, diagnostic_error_group_floating, { fg = palette.red })
+hl(0, diagnostic_warn_group_floating, { fg = palette.yellow })
+hl(0, diagnostic_hint_group_floating, { fg = palette.green })
+hl(0, diagnostic_info_group_floating, { fg = palette.blue })
 
 local get_error = function()
   return #vim.diagnostic.get(0, { severity = vim.diagnostic.severity.ERROR })

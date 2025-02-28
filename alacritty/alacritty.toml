@@ -1,4 +1,4 @@
-import = ["~/.config/alacritty/duskfox.toml"]
+import = ["~/.config/alacritty/gruvbox-light.toml"]
 
 [window]
 startup_mode = "Maximized"
