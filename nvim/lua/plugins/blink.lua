@@ -23,6 +23,11 @@ return {
     },
     fuzzy = { implementation = "prefer_rust_with_warning" },
     completion = {
+      list = {
+        selection = {
+          auto_insert = false
+        }
+      },
       ghost_text = {
         enabled = true,
         show_with_menu = true
