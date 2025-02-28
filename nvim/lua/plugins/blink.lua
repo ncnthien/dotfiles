@@ -8,8 +8,6 @@ return {
     keymap = {
       preset = "default",
       ["<C-space>"] = {},
-      ["<C-j>"] = { "select_next", "fallback" },
-      ["<C-k>"] = { "select_prev", "fallback" },
       ["<Tab>"] = { "accept" }
     },
     sources = {
@@ -37,8 +35,6 @@ return {
         }
       },
       keymap = {
-        ["<C-j>"] = { "select_next" },
-        ["<C-k>"] = { "select_prev" },
         ["<Tab>"] = { "accept" }
       }
     }
