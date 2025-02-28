@@ -20,7 +20,6 @@ return {
     picker:close()
 
     require("gruvbox").setup({
-      inverse = true,
       overrides = {
         SignColumn = { bg = "NONE" },
         CursorLineNr = { bg = "NONE" },
@@ -29,17 +28,16 @@ return {
         DiagnosticSignInfo = { bg = "NONE", fg = palette.blue },
         DiagnosticSignHint = { bg = "NONE", fg = palette.green },
         -- Snacks picker
-        SnacksPickerList = { bg = "NONE" },
         SnacksPickerListBorder = { bg = "NONE" },
-        SnacksPickerInput = { bg = "NONE" },
         SnacksPickerInputBorder = { bg = "NONE" },
-        SnacksPickerPreview = { bg = "NONE" },
         SnacksPickerPreviewBorder = { bg = "NONE" },
         SnacksPickerPreviewTitle = { bg = "NONE", fg = palette.green },
         SnacksPickerBoxBorder = { bg = "NONE" },
         SnacksPickerTitle = { bg = "NONE", fg = palette.green },
         SnacksPickerToggleHidden = { fg = "NONE", bg = palette.bg0 },
         SnacksPickerToggleIgnored = { fg = "NONE", bg = palette.bg0 },
+        SnacksNormal = { bg = "NONE" },
+        SnacksPicker = { bg = "NONE" },
       }
     })
     vim.o.background = "light"
