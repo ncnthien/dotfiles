@@ -15,3 +15,4 @@ opt.signcolumn = "yes"
 opt.guicursor = "n-v-c-i:block"
 opt.undofile = true
 opt.cursorline = true
+opt.conceallevel = 3
