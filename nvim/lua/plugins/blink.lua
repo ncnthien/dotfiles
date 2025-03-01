@@ -35,6 +35,11 @@ return {
     },
     cmdline = {
       completion = {
+        list = {
+          selection = {
+            auto_insert = false
+          }
+        },
         menu = {
           auto_show = true
         }
