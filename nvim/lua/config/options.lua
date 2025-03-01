@@ -12,6 +12,6 @@ opt.smartindent = true
 opt.spelllang = { "en" }
 opt.tabstop = 2
 opt.signcolumn = "yes"
-opt.guicursor = "n-v-c:block,i:block-blinkon1"
+opt.guicursor = "n-v-c-i:block"
 opt.undofile = true
 opt.cursorline = true
