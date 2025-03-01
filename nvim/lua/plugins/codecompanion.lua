@@ -4,6 +4,10 @@ return {
     "nvim-lua/plenary.nvim",
     "nvim-treesitter/nvim-treesitter",
   },
+  keys = {
+    { "<leader>cc", ":CodeCompanionChat", desc = "Code Companion" },
+    { "<leader>ca", ":CodeCompanionAction", desc = "Code Companion Action" },
+  },
   config = function ()
     require("codecompanion").setup({
       prompt_library = {
