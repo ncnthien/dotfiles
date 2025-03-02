@@ -12,7 +12,7 @@ vim.api.nvim_create_user_command(
   "Env",
   function(opts)
     local environment = opts.args
-    vim.cmd("!switch-env " .. environment)
+    vim.cmd("!env-manager switch " .. environment)
   end,
   {
     nargs = 1,
@@ -34,7 +34,7 @@ vim.api.nvim_create_user_command(
   "Token",
   function(opts)
     local token = opts.args
-    vim.cmd("!token " .. token)
+    vim.cmd("!env-manager token " .. token)
   end,
   {
     nargs = 1,
