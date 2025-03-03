@@ -5,8 +5,7 @@ return {
     "nvim-treesitter/nvim-treesitter",
   },
   keys = {
-    { "<leader>cc", ":CodeCompanionChat", desc = "Code Companion" },
-    { "<leader>ca", ":CodeCompanionAction", desc = "Code Companion Action" },
+    { "<leader>cc", ":CodeCompanionAction", desc = "Code Companion Action" },
   },
   config = function ()
     require("codecompanion").setup({
