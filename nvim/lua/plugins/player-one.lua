@@ -1,7 +1,7 @@
 return {
   "jackplus-xyz/player-one.nvim",
-  enabled = false,
+  enabled = true,
   opts = {
-    is_enabled = true
+    is_enabled = false
   }
 }
