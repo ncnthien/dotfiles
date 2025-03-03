@@ -1,5 +1,6 @@
 -- Gruvbox light palette
 local palette = {
+  bg = "#fbf1c7",     -- background
   bg0 = "#d5c4a1",    -- light background
   red = "#cc241d",    -- errors
   yellow = "#d65d0e", -- warnings
@@ -38,6 +39,8 @@ return {
         SnacksPickerToggleIgnored = { fg = "NONE", bg = palette.bg0 },
         SnacksNormal = { bg = "NONE" },
         SnacksPicker = { bg = "NONE" },
+        -- Flash
+        FlashLabel = { bg = palette.green, fg = palette.bg }
       }
     })
     vim.o.background = "light"
