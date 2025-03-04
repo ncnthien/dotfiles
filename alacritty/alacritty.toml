@@ -1,4 +1,4 @@
-import = ["~/.config/alacritty/gruvbox-light.toml"]
+import = ["~/.config/alacritty/kanagawa-dragon.toml"]
 
 [window]
 startup_mode = "Maximized"

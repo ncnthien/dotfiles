@@ -2,13 +2,13 @@ local function color(group_name, item)
   return '%#' .. group_name .. '#' .. item .. '%*'
 end
 
--- Gruvbox light palette
+-- Kanagawa Dragon palette
 local palette = {
-  bg0 = "#d5c4a1",    -- light background
-  red = "#cc241d",    -- errors
-  yellow = "#d65d0e", -- warnings
-  green = "#98971a",  -- hints
-  blue = "#458588",   -- info
+  bg0 = "#000000",    -- dark background
+  red = "#c4746e",    -- errors
+  yellow = "#dca561", -- warnings
+  green = "#76946a",  -- hints
+  blue = "#7fb4ca",   -- info
 }
 
 local hl = vim.api.nvim_set_hl
