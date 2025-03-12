@@ -26,27 +26,27 @@ vim.api.nvim_create_autocmd("BufReadPost", {
   end,
 })
 
-vim.api.nvim_create_autocmd('LspAttach', {
+vim.api.nvim_create_autocmd("LspAttach", {
   group = augroup("UserLspConfig"),
   callback = function(ev)
-    vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
+    vim.bo[ev.buf].omnifunc = "v:lua.vim.lsp.omnifunc"
 
     local opts = { buffer = ev.buf }
-    vim.keymap.set('n', '<leader>cx', vim.lsp.buf.hover, opts)
-    vim.keymap.set('n', '<leader>cr', vim.lsp.buf.rename, opts)
-    vim.keymap.set('n', '<leader>cf', function()
+    vim.keymap.set("n", "<leader>cx", vim.lsp.buf.hover, opts)
+    vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename, opts)
+    vim.keymap.set("n", "<leader>cf", function()
       vim.lsp.buf.format { async = true }
     end, opts)
-    vim.keymap.set('n', 'K', vim.lsp.buf.definition, opts)
-    vim.keymap.set('n', '<leader>cq', quickfix, opts)
-    vim.keymap.set('n', '<leader>cs', vim.diagnostic.open_float, opts)
-    vim.keymap.set('n', 'tn', function ()
+    vim.keymap.set("n", "K", vim.lsp.buf.definition, opts)
+    vim.keymap.set("n", "<leader>cq", quickfix, opts)
+    vim.keymap.set("n", "<leader>cs", vim.diagnostic.open_float, opts)
+    vim.keymap.set("n", "tn", function ()
       vim.diagnostic.goto_next()
-      vim.cmd('normal! zz')
+      vim.cmd("normal! zz")
     end , opts)
-    vim.keymap.set('n', 'tp', function ()
+    vim.keymap.set("n", "tp", function ()
       vim.diagnostic.goto_prev()
-      vim.cmd('normal! zz')
+      vim.cmd("normal! zz")
     end, opts)
 
     local signs = {
@@ -64,10 +64,10 @@ vim.api.nvim_create_autocmd('LspAttach', {
 })
 
 -- Auto run eslint fix before save if eslint is installed
-vim.api.nvim_create_autocmd('BufWritePre', {
+vim.api.nvim_create_autocmd("BufWritePre", {
   group = augroup("Eslint"),
   callback = function()
-    if vim.fn.exists(':EslintFixAll') > 0 then vim.cmd('EslintFixAll') end
+    if vim.fn.exists(":EslintFixAll") > 0 then vim.cmd("EslintFixAll") end
   end,
 })
 
@@ -77,3 +77,11 @@ vim.api.nvim_create_autocmd("TextYankPost", {
     vim.highlight.on_yank({ timeout = 50 })
   end,
 })
+
+vim.api.nvim_create_autocmd("VimResized", {
+  group = augroup("auto_resize"),
+  callback = function()
+    vim.cmd("wincmd =")
+  end,
+})
+
