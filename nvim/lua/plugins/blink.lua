@@ -1,8 +1,10 @@
 return {
   "saghen/blink.cmp",
-  version = '*',
+  version = "*",
   dependencies = {
-    "giuxtaposition/blink-cmp-copilot"
+    "giuxtaposition/blink-cmp-copilot",
+    { "kristijanhusak/vim-dadbod-completion", ft = { "sql", "mysql", "plsql" }, lazy = true },
+    { "kristijanhusak/vim-dadbod-ui", ft = { "sql", "mysql", "plsql" }, lazy = true }
   },
   opts = {
     keymap = {
@@ -12,12 +14,19 @@ return {
     },
     sources = {
       default = { "lsp", "path", "snippets", "buffer", "copilot" },
+      per_filetype = {
+        sql = { "snippets", "dadbod", "buffer" }
+      },
       providers = {
         copilot = {
           name = "copilot",
           module = "blink-cmp-copilot",
           score_offset = 100,
           async = true
+        },
+        dadbod = {
+          name = "Dadbod",
+          module = "vim_dadbod_completion.blink"
         }
       },
     },
