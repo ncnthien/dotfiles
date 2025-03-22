@@ -3,7 +3,8 @@ return {
   dependencies = {
     "nvim-lua/plenary.nvim",
     "nvim-treesitter/nvim-treesitter",
-    "ravitemer/mcphub.nvim"
+    "ravitemer/mcphub.nvim",
+    "MeanderingProgrammer/render-markdown.nvim"
   },
   keys = {
     { "<leader>cc", ":CodeCompanionAction", desc = "Code Companion Action" },
@@ -46,7 +47,7 @@ return {
           return require("codecompanion.adapters").extend("copilot", {
             schema = {
               model = {
-                default = "claude-3.7-sonnet-thought"
+                default = "claude-3.7-sonnet"
               }
             }
           })
@@ -82,7 +83,8 @@ return {
           -- show_header_separator = true, This option cause a bug that we cannot insert buffer into the chat
           window = {
             width = 70
-          }
+          },
+          message_formatter = "render-markdown" -- Use render-markdown.nvim for formatting messages
         }
       }
     })
