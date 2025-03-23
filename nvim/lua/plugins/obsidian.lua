@@ -1,6 +1,7 @@
 return {
   "epwalsh/obsidian.nvim",
   version = "*",
+  enabled = false,
   name = "obsidian",
   keys = {
     { "<leader>zz", "<cmd>ObsidianQuickSwitch<cr>", desc = "ObsidianQuickSwitch" },
