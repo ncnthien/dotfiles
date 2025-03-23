@@ -4,7 +4,8 @@ return {
     "nvim-lua/plenary.nvim",
     "nvim-treesitter/nvim-treesitter",
     "ravitemer/mcphub.nvim",
-    "MeanderingProgrammer/render-markdown.nvim"
+    "MeanderingProgrammer/render-markdown.nvim",
+    "echasnovski/mini.diff"
   },
   keys = {
     { "<leader>cc", ":CodeCompanionAction", desc = "Code Companion Action" },
@@ -85,6 +86,10 @@ return {
             width = 70
           },
           message_formatter = "render-markdown" -- Use render-markdown.nvim for formatting messages
+        },
+        diff = {
+          enabled = true,
+          provider = "mini_diff"
         }
       }
     })
