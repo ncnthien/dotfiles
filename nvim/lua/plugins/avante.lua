@@ -8,9 +8,8 @@ return {
     },
     provider = "copilot",
     copilot = {
-      model = "claude-3.7-sonnet",
+      model = "claude-3.5-sonnet",
       temperature = 0,
-      -- disable_tools = true
     },
     behaviour = {
       auto_apply_diff_after_generation = true
@@ -21,15 +20,6 @@ return {
         start_insert = false
       }
     },
-    system_prompt = function ()
-      local hub = require("mcphub").get_hub_instance()
-      return hub:get_active_servers_prompt()
-    end,
-    custom_tools = function()
-      return {
-        require("mcphub.extensions.avante").mcp_tool(),
-      }
-    end,
   },
   build = "make",
   dependencies = {
