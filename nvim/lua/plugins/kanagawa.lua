@@ -43,5 +43,7 @@ return {
     -- setup must be called before loading
     vim.cmd("set background=dark")
     vim.cmd("colorscheme kanagawa")
+    vim.api.nvim_set_hl(0, "NormalFloat", { bg = "NONE" })
+    vim.api.nvim_set_hl(0, "FloatBorder", { bg = "NONE" })
   end
 }
