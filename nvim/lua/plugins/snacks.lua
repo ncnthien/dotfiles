@@ -41,7 +41,7 @@ local dashboard = {
   },
 }
 
-local exclue = { ".git/", "node_modules/", "e2e/" }
+local exclude = { ".git/", "node_modules/", "e2e/" }
 
 local words = {
   enabled = true,
@@ -66,9 +66,9 @@ return {
     scope = scope
   },
   keys = {
-    { "<leader>ff", function() Snacks.picker.files({ exclude = exclue }) end, desc = "Files" },
-    { "<leader>fl", function() Snacks.picker.grep({ exclude = exclue }) end, desc = "Grep" },
-    { "<leader>fw", function() Snacks.picker.grep_word({ exclude = exclue }) end, desc = "Visual selection or word", mode = { "n", "x" } },
+    { "<leader>ff", function() Snacks.picker.files({ exclude = exclude }) end, desc = "Files" },
+    { "<leader>fl", function() Snacks.picker.grep({ exclude = exclude }) end, desc = "Grep" },
+    { "<leader>fw", function() Snacks.picker.grep_word({ exclude = exclude }) end, desc = "Visual selection or word", mode = { "n", "x" } },
     { "<leader>fc", function() Snacks.picker.grep_word({
       on_close = function()
         vim.schedule(function()
