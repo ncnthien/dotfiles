@@ -81,7 +81,7 @@ return {
       },
       display = {
         chat = {
-          -- show_header_separator = true, This option cause a bug that we cannot insert buffer into the chat
+          show_header_separator = true,
           window = {
             width = 70
           },
