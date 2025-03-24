@@ -1,4 +1,5 @@
 return {
+  enabled = false,
   "olimorris/codecompanion.nvim",
   dependencies = {
     "nvim-lua/plenary.nvim",
