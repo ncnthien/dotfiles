@@ -22,13 +22,14 @@ return {
             is_default = true,
             is_slash_cmd = true,
             short_name = "lazycommit",
-            auto_submit = false,
+            auto_submit = true,
             stop_context_insertion = false
           },
           prompts = {
             {
               role = "user",
               content = function()
+                vim.fn.system("git add .")
                 vim.g.codecompanion_auto_tool_mode = true
                 return string.format(
                   [[
@@ -49,7 +50,7 @@ NOTE: Make sure to following the following rules:
 - An item of detail description must start with `-` prefix.
 - The commit title and the the detail description should be separated by TWO blank lines (`\n\n`).
                   ]],
-                  vim.fn.system("git diff --no-ext-diff"),
+                  vim.fn.system("git diff --no-ext-diff --staged"),
                   vim.fn.FugitiveHead()
                 )
               end,
