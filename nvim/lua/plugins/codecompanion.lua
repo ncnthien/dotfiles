@@ -37,7 +37,7 @@ return {
 - Run command `git status` to check the current status of the repository.
 - Run command `git add .` to stage all changes.
 - Run command `git diff --no-ext-diff --staged` to see the changes that will be committed.
-- Run command ` git commit -m "$(echo -e "<current_branch>: <commit_message>\n\n<detail_description>")"` to commit the changes.
+- Run command `echo -e "<current_branch>: <commit_message>\n\n<detail_description>" > /tmp/commit_msg.txt && git commit -F /tmp/commit_msg.txt && rm /tmp/commit_msg.txt` to commit the changes.
 NOTE: Make sure to following the following rules:
 - The commit title convention MUST be: <current_branch>: <commit_message>
 - Lines of detail description should be separated by ONE blank line (`\n`) for each item.
