@@ -29,6 +29,7 @@ return {
             {
               role = "user",
               content = function()
+                vim.g.codecompanion_auto_tool_mode = true
                 return string.format(
                   [[
 @cmd_runner You are a senior developer. Follow these steps to commit the current changes:
@@ -36,9 +37,11 @@ return {
 - Run command `git status` to check the current status of the repository.
 - Run command `git add .` to stage all changes.
 - Run command `git diff --no-ext-diff --staged` to see the changes that will be committed.
-- Run command `git commit -m "<current_branch>: <commit_message>"` to commit the changes.
-NOTE: Make sure to following the following rules
-- The commit convention MUST be: <current_branch>: <commit_message>
+- Run command ` git commit -m "$(echo -e "<current_branch>: <commit_message>\n\n<detail_description>")"` to commit the changes.
+NOTE: Make sure to following the following rules:
+- The commit title convention MUST be: <current_branch>: <commit_message>
+- Lines of detail description should be separated by ONE blank line (`\n`) for each item.
+- The commit title and the the detail description should be separated by TWO blank lines (`\n\n`).
                   ]]
                 )
               end,
