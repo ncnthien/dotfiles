@@ -41,6 +41,7 @@ return {
 NOTE: Make sure to following the following rules:
 - The commit title convention MUST be: <current_branch>: <commit_message>
 - Lines of detail description should be separated by ONE blank line (`\n`) for each item.
+- An item of detail description must start with `-` prefix.
 - The commit title and the the detail description should be separated by TWO blank lines (`\n\n`).
                   ]]
                 )
