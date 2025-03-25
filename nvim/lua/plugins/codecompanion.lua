@@ -46,9 +46,9 @@ Review view the changes and commit the changes with the following steps:
 
 NOTE: Make sure to following the following rules:
 - The commit title convention MUST be: <current_branch>: <commit_message>
-- Lines of detail description should be separated by ONE blank line (`\n`) for each item.
+- Lines of detail description should be separated by **ONE blank line (`\n`)** for each item.
+- The commit title and the the detail description should be separated by **TWO blank lines (`\n\n`)**.
 - An item of detail description must start with `-` prefix.
-- The commit title and the the detail description should be separated by TWO blank lines (`\n\n`).
                   ]],
                   vim.fn.system("git diff --no-ext-diff --staged"),
                   vim.fn.FugitiveHead()
