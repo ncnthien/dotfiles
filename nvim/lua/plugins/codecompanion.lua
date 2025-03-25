@@ -32,18 +32,25 @@ return {
                 vim.g.codecompanion_auto_tool_mode = true
                 return string.format(
                   [[
-@cmd_runner You are a senior developer. Follow these steps to commit the current changes:
-- Run command `git branch` to check the current branch.
-- Run command `git status` to check the current status of the repository.
+@cmd_runner You are a senior developer best at writing commit message. Giving you the current branch and the diff changes below:
+- The diff:
+```
+%s
+```
+- The current branch: `%s`
+
+Review view the changes and commit the changes with the following steps:
 - Run command `git add .` to stage all changes.
-- Run command `git diff --no-ext-diff --staged` to see the changes that will be committed.
-- Run command `echo -e "<current_branch>: <commit_message>\n\n<detail_description>" > /tmp/commit_msg.txt && git commit -F /tmp/commit_msg.txt && rm /tmp/commit_msg.txt` to commit the changes.
+- Run command `echo "<current_branch>: <commit_message>\n\n<detail_description>" > /tmp/commit_msg.txt && git commit -F /tmp/commit_msg.txt && rm /tmp/commit_msg.txt` to commit the changes.
+
 NOTE: Make sure to following the following rules:
 - The commit title convention MUST be: <current_branch>: <commit_message>
 - Lines of detail description should be separated by ONE blank line (`\n`) for each item.
 - An item of detail description must start with `-` prefix.
 - The commit title and the the detail description should be separated by TWO blank lines (`\n\n`).
-                  ]]
+                  ]],
+                  vim.fn.system("git diff --no-ext-diff"),
+                  vim.fn.FugitiveHead()
                 )
               end,
               opts = {
