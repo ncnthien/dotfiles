@@ -5,7 +5,8 @@ return {
     "nvim-treesitter/nvim-treesitter",
     "ravitemer/mcphub.nvim",
     "MeanderingProgrammer/render-markdown.nvim",
-    "echasnovski/mini.diff"
+    "echasnovski/mini.diff",
+    "banjo/contextfiles.nvim"
   },
   keys = {
     { "<leader>cc", ":CodeCompanionAction", desc = "Code Companion Action" },
@@ -13,35 +14,40 @@ return {
   config = function ()
     require("codecompanion").setup({
       prompt_library = {
-        ["Generate a Commit Message"] = {
+        ["Lazy commit"] = {
+          strategy = "chat",
+          description = "Read the changes and commit",
+          opts = {
+            index = 10,
+            is_default = true,
+            is_slash_cmd = true,
+            short_name = "lazycommit",
+            auto_submit = false,
+            stop_context_insertion = false
+          },
           prompts = {
             {
               role = "user",
               content = function()
                 return string.format(
-                  [[You are an expert at following the Conventional Commit specification. Given the git diff listed below, please generate a commit message for me:
-
-```diff
-%s
-```
-
-  The current branch is %s.
-  The format of commit title should be "<current_branch>: <description>"
-  For example: if the current branch is "feature/1234", the change is add "creating books"
-    - The valid commit title should be "feature/1234: add books feature".
-    - The invalid commit title should be "feature/1234: feat(book-feature): add new feature".
-  The above commit title is invalid because it contains more than one colon.
-  ]],
-                  vim.fn.system("git diff --no-ext-diff --staged"),
-                  vim.fn.FugitiveHead()
+                  [[
+@cmd_runner You are a senior developer. Follow these steps to commit the current changes:
+- Run command `git branch` to check the current branch.
+- Run command `git status` to check the current status of the repository.
+- Run command `git add .` to stage all changes.
+- Run command `git diff --no-ext-diff --staged` to see the changes that will be committed.
+- Run command `git commit -m "<current_branch>: <commit_message>"` to commit the changes.
+NOTE: Make sure to following the following rules
+- The commit convention MUST be: <current_branch>: <commit_message>
+                  ]]
                 )
               end,
               opts = {
-                contains_code = true,
-              },
-            },
-          },
-        }
+                contains_code = true
+              }
+            }
+          }
+        },
       },
       adapters = {
         copilot = function()
