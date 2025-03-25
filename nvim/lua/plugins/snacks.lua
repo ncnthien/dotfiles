@@ -1,9 +1,5 @@
 local picker = {
   enabled = true,
-  ui_select = false,
-  layout = {
-    fullscreen = true
-  },
   sources = {
     explorer = {
       enabled = true,
