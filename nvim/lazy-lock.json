@@ -1,4 +1,5 @@
 {
+  "VectorCode": { "branch": "main", "commit": "0c005dfb4bb4a95c08209352e4a2ce97daecb49f" },
   "avante.nvim": { "branch": "main", "commit": "25e9b1c1114a3b25940051c276747a53cf84d3d5" },
   "blink-cmp-avante": { "branch": "master", "commit": "e5a1be4c818520385f95fe2663c04e48f5f0c36a" },
   "blink-cmp-copilot": { "branch": "main", "commit": "439cff78780c033aa23cf061d7315314b347e3c1" },
@@ -7,7 +8,6 @@
   "contextfiles.nvim": { "branch": "main", "commit": "f0301f03a02be590515ec62466c102a048234280" },
   "copilot.lua": { "branch": "master", "commit": "865f40fb4e9dfe037ab01b144e6448bfd13f4bb0" },
   "diffview": { "branch": "main", "commit": "4516612fe98ff56ae0415a259ff6361a89419b0a" },
-  "dressing.nvim": { "branch": "master", "commit": "2d7c2db2507fa3c4956142ee607431ddb2828639" },
   "flash.nvim": { "branch": "main", "commit": "3c942666f115e2811e959eabbdd361a025db8b63" },
   "fugitive": { "branch": "master", "commit": "4a745ea72fa93bb15dd077109afbb3d1809383f2" },
   "gitsigns.nvim": { "branch": "main", "commit": "7010000889bfb6c26065e0b0f7f1e6aa9163edd9" },

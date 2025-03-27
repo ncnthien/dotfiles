@@ -6,7 +6,8 @@ return {
     "ravitemer/mcphub.nvim",
     "MeanderingProgrammer/render-markdown.nvim",
     "echasnovski/mini.diff",
-    "banjo/contextfiles.nvim"
+    "banjo/contextfiles.nvim",
+    "Davidyz/VectorCode"
   },
   keys = {
     { "<leader>cc", ":CodeCompanionAction", desc = "Code Companion Action" },
@@ -86,13 +87,30 @@ NOTE: Make sure to following the following rules:
             }
           },
           tools = {
+            groups = {
+              ["the_danger"] = {
+                description = "Full Stack Developer - Can run code, edit code and modify files",
+                system_prompt = "**DO NOT** make any assumptions about the dependencies that a user has installed. If you need to install any dependencies to fulfil the user's request, do so via the Command Runner tool. If the user doesn't specify a path, use their current working directory.",
+                tools = {
+                  "cmd_runner",
+                  "editor",
+                  "files",
+                  "mcp",
+                  "vectorcode"
+                },
+              },
+            },
             ["mcp"] = {
               callback = function() return require("mcphub.extensions.codecompanion") end,
               description = "Call tools and resources from the MCP Servers",
               opts = {
                 requires_approval = true,
               }
-            }
+            },
+            ["vectorcode"] = {
+              callback = require("vectorcode.integrations").codecompanion.chat.make_tool(),
+              description = "Run VectorCode to retrieve the project context.",
+            },
           }
         }
       },
@@ -102,7 +120,7 @@ NOTE: Make sure to following the following rules:
           window = {
             width = 70
           },
-          message_formatter = "render-markdown" -- Use render-markdown.nvim for formatting messages
+          message_formatter = "render-markdown"
         },
         diff = {
           enabled = true,
