@@ -6,7 +6,7 @@ return {
   build = "npm install -g mcp-hub@latest", -- Installs required mcp-hub npm module
   config = function()
     require("mcphub").setup({
-      port = 3000,
+      port = 3956,
       config = vim.fn.expand("~/mcpservers.json"),
       log = {
         level = vim.log.levels.WARN,
