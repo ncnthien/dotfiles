@@ -5,6 +5,7 @@ ZLE_RPROMPT_INDENT=0
 
 export ZSH="$HOME/.oh-my-zsh"
 export PATH=~/bin:"$PATH"
+export PATH=~/.local/bin:"$PATH"
 
 # ZSH_THEME="robbyrussell"
 ZSH_THEME="powerlevel10k/powerlevel10k"
