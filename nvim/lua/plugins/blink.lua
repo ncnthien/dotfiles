@@ -46,6 +46,11 @@ return {
         enabled = true,
         show_with_menu = true
       },
+      accept = {
+        auto_brackets = {
+          enabled = false,
+        }
+      }
     },
     cmdline = {
       completion = {

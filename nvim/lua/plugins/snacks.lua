@@ -28,15 +28,6 @@ local picker = {
   }
 }
 
-local dashboard = {
-  enabled = true,
-  sections = {
-    { section = "header" },
-    { icon = " ", title = "Recent Files", section = "recent_files", indent = 2, padding = 2 },
-    { icon = " ", title = "Projects", section = "projects", indent = 2, padding = 2 }
-  },
-}
-
 local exclude = { ".git/", "node_modules/", "e2e/" }
 
 local words = {
@@ -57,7 +48,6 @@ return {
   lazy = false,
   opts = {
     picker = picker,
-    dashboard = dashboard,
     words = words,
     scope = scope
   },

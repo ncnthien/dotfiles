@@ -23,18 +23,6 @@ return {
 
           lspconfig[server_name].setup({
             capabilities = capabilities,
-            handlers = {
-              ['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, { border = "single" }),
-              ['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = "single" }),
-            },
-          })
-
-          lspconfig.vtsls.setup({
-            capabilities = capabilities,
-            handlers = {
-              ['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, { border = "single" }),
-              ['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = "single" }),
-            },
           })
 
           lspconfig.lua_ls.setup({
@@ -63,6 +51,6 @@ return {
     })
 
     vim.opt.pumheight = 7
-    vim.diagnostic.config({ float = { border = "single" } })
+    vim.opt.winborder = "single"
   end
 }

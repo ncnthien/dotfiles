@@ -40,11 +40,11 @@ vim.api.nvim_create_autocmd("LspAttach", {
     vim.keymap.set("n", "K", vim.lsp.buf.definition, opts)
     vim.keymap.set("n", "<leader>cq", quickfix, opts)
     vim.keymap.set("n", "<leader>cs", vim.diagnostic.open_float, opts)
-    vim.keymap.set("n", "tn", function ()
+    vim.keymap.set("n", "tn", function()
       vim.diagnostic.goto_next()
       vim.cmd("normal! zz")
-    end , opts)
-    vim.keymap.set("n", "tp", function ()
+    end, opts)
+    vim.keymap.set("n", "tp", function()
       vim.diagnostic.goto_prev()
       vim.cmd("normal! zz")
     end, opts)
@@ -56,10 +56,17 @@ vim.api.nvim_create_autocmd("LspAttach", {
       Info = " ",
     }
 
-    for type, icon in pairs(signs) do
-      local hl = "DiagnosticSign" .. type
-      vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
-    end
+    vim.diagnostic.config({
+      virtual_text = true,
+      signs = {
+        text = {
+          [vim.diagnostic.severity.ERROR] = signs.Error,
+          [vim.diagnostic.severity.WARN] = signs.Warn,
+          [vim.diagnostic.severity.HINT] = signs.Hint,
+          [vim.diagnostic.severity.INFO] = signs.Info,
+        },
+      }
+    })
   end,
 })
 
@@ -84,4 +91,3 @@ vim.api.nvim_create_autocmd("VimResized", {
     vim.cmd("wincmd =")
   end,
 })
-

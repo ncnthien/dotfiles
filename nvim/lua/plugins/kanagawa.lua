@@ -3,7 +3,6 @@ return {
   lazy = false,
   priority = 1000,
   config = function ()
-    -- Default options:
     require('kanagawa').setup({
       compile = false,
       undercurl = true,
@@ -15,12 +14,11 @@ return {
       transparent = false,
       dimInactive = false,
       terminalColors = true,
-      colors = {
-        palette = {},
-        theme = { wave = {}, lotus = {}, dragon = {}, all = {} },
-      },
       overrides = function(colors)
         return {
+          NormalFloat = { bg = "NONE" },
+          FloatBorder = { bg = "NONE" },
+          FloatTitle = { bg = "NONE" },
           SignColumn = { bg = "NONE" },
           CursorLineNr = { bg = "NONE" },
           LineNr = { bg = "NONE" },
@@ -31,6 +29,8 @@ return {
           DiagnosticSignWarn = { bg = "NONE", fg = colors.roninYellow },
           DiagnosticSignInfo = { bg = "NONE", fg = colors.waveAqua1 },
           DiagnosticSignHint = { bg = "NONE", fg = colors.dragonBlue },
+          BlinkCmpMenu = { bg = "#16161D" },
+          BlinkCmpMenuBorder = { bg = "#16161D" },
         }
       end,
       theme = "dragon",
@@ -40,10 +40,7 @@ return {
       },
     })
 
-    -- setup must be called before loading
     vim.cmd("set background=dark")
     vim.cmd("colorscheme kanagawa")
-    vim.api.nvim_set_hl(0, "NormalFloat", { bg = "NONE" })
-    vim.api.nvim_set_hl(0, "FloatBorder", { bg = "NONE" })
   end
 }
