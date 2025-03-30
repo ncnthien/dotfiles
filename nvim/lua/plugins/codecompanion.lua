@@ -5,14 +5,13 @@ return {
     "nvim-treesitter/nvim-treesitter",
     "ravitemer/mcphub.nvim",
     "MeanderingProgrammer/render-markdown.nvim",
-    "echasnovski/mini.diff",
     "banjo/contextfiles.nvim",
     "Davidyz/VectorCode"
   },
   keys = {
     { "<leader>cc", ":CodeCompanionAction", desc = "Code Companion Action" },
   },
-  config = function ()
+  config = function()
     require("codecompanion").setup({
       prompt_library = {
         ["Lazy commit"] = {
@@ -75,7 +74,7 @@ NOTE: Make sure to following the following rules:
       strategies = {
         chat = {
           roles = {
-            llm = function (adapter)
+            llm = function(adapter)
               return adapter.formatted_name
             end
           },
@@ -124,7 +123,6 @@ NOTE: Make sure to following the following rules:
         },
         diff = {
           enabled = true,
-          provider = "mini_diff"
         }
       }
     })

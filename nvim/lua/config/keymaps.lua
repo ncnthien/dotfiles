@@ -1,11 +1,11 @@
 local map = vim.keymap.set
 
 -- Select, delete, yank all
-map("n", "vig", "gg<S-v>G", { desc = "Select all" })
-map("n", "dig", "ggdG", { desc = "Delete all" })
-map("n", "yig", "ggyG", { desc = "Yank all" })
-map("n", "=ig", "gg=G", { desc = "Indent all" })
-map("n", "cig", "ggcG", { desc = "Delete and insert all" })
+map("n", "vig", "gg<S-v>G", { desc = "Select entire buffer content" })
+map("n", "dig", "ggdG", { desc = "Delete entire buffer content" })
+map("n", "yig", "ggyG", { desc = "Yank (copy) entire buffer content" })
+map("n", "=ig", "gg=G", { desc = "Auto-indent entire buffer content" })
+map("n", "cig", "ggcG", { desc = "Change (delete and enter insert mode) entire buffer content" })
 
 -- Disable arrow keys
 map("n", "<Up>", "<Nop>")
@@ -18,10 +18,10 @@ map("i", "<Left>", "<Nop>")
 map("i", "<Right>", "<Nop>")
 
 -- Move to window
-map("n", "<C-h>", "<C-w>h", { desc = "Go to left window" })
-map("n", "<C-j>", "<C-w>j", { desc = "Go to lower window" })
-map("n", "<C-k>", "<C-w>k", { desc = "Go to upper window" })
-map("n", "<C-l>", "<C-w>l", { desc = "Go to right window" })
+map("n", "<C-h>", "<C-w>h", { desc = "Navigate to left window" })
+map("n", "<C-j>", "<C-w>j", { desc = "Navigate to window below" })
+map("n", "<C-k>", "<C-w>k", { desc = "Navigate to window above" })
+map("n", "<C-l>", "<C-w>l", { desc = "Navigate to right window" })
 
 -- Resize windows
 map("n", "<A-h>", "<cmd>vertical resize -2<cr>", { desc = "Decrease window width" })
@@ -30,28 +30,28 @@ map("n", "<A-j>", "<cmd>resize +2<cr>", { desc = "Increase window height" })
 map("n", "<A-k>", "<cmd>resize -2<cr>", { desc = "Decrease window height" })
 
 -- Windows
-map("n", "<leader>ww", "<C-W>p", { desc = "Other window" })
-map("n", "<leader>wd", "<C-W>c", { desc = "Close window" })
-map("n", "<leader>wo", "<C-W>o", { desc = "Close all other windows" })
-map("n", "<leader>wj", "<C-W>s", { desc = "Split window below" })
-map("n", "<leader>wl", "<C-W>v", { desc = "Split window right" })
+map("n", "<leader>ww", "<C-W>p", { desc = "Jump to previous window" })
+map("n", "<leader>wd", "<C-W>c", { desc = "Close current window" })
+map("n", "<leader>wo", "<C-W>o", { desc = "Keep only current window" })
+map("n", "<leader>wj", "<C-W>s", { desc = "Split window horizontally" })
+map("n", "<leader>wl", "<C-W>v", { desc = "Split window vertically" })
 
 -- Center screen when moving
-map("n", "<C-u>", "<C-u>zz", { desc = "Center when scroll up" })
-map("n", "<C-d>", "<C-d>zz", { desc = "Center when scroll down" })
+map("n", "<C-u>", "<C-u>zz", { desc = "Scroll half-page up and center" })
+map("n", "<C-d>", "<C-d>zz", { desc = "Scroll half-page down and center" })
 
 -- Center screen when jumping
-map("n", "<C-i>", "<C-i>zz", { desc = "Center when jump forward" })
-map("n", "<C-o>", "<C-o>zz", { desc = "Center when jump backward" })
+map("n", "<C-i>", "<C-i>zz", { desc = "Jump to newer position and center" })
+map("n", "<C-o>", "<C-o>zz", { desc = "Jump to older position and center" })
 
 -- Center screen when move to next/prev result
-map("n", "*", "*Nzz", { desc = "Center when next result with *" })
-map("n", "#", "#Nzz", { desc = "Center when next result with #" })
-map("n", "n", "nzz", { desc = "Center when next result" })
-map("n", "N", "Nzz", { desc = "Center when prev result" })
+map("n", "*", "*Nzz", { desc = "Search word under cursor and center" })
+map("n", "#", "#Nzz", { desc = "Search word under cursor backward and center" })
+map("n", "n", "nzz", { desc = "Go to next search match and center" })
+map("n", "N", "Nzz", { desc = "Go to previous search match and center" })
 
 -- Clear search with <esc>
-map({ "i", "x", "n", "s" }, "<esc>", "<cmd>:silent! noh<cr><esc>", { desc = "Clear search" })
+map({ "i", "x", "n", "s" }, "<esc>", "<cmd>:silent! noh<cr><esc>", { desc = "Escape and clear search highlights" })
 
 -- Better up/down movement
 map({ "n", "x" }, "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
@@ -82,5 +82,5 @@ map(
     vim.fn.setline(new_line_num, indent .. 'console.log(\'' .. current_word .. '\', '.. current_word ..')')
     vim.cmd('normal! $')
   end,
-  { noremap = true, silent = true, desc = "Log current word" }
+    { noremap = true, silent = true, desc = "Insert console.log for current word" }
 )
