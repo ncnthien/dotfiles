@@ -4,6 +4,7 @@ local map = vim.keymap.set
 map("n", "vig", "gg<S-v>G", { desc = "Select all" })
 map("n", "dig", "ggdG", { desc = "Delete all" })
 map("n", "yig", "ggyG", { desc = "Yank all" })
+map("n", "=ig", "gg=G", { desc = "Indent all" })
 map("n", "cig", "ggcG", { desc = "Delete and insert all" })
 
 -- Disable arrow keys
