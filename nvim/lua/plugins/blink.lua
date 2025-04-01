@@ -2,7 +2,6 @@ return {
   "saghen/blink.cmp",
   version = "*",
   dependencies = {
-    "Kaiser-Yang/blink-cmp-avante",
     "giuxtaposition/blink-cmp-copilot",
     { "kristijanhusak/vim-dadbod-completion", ft = { "sql", "mysql", "plsql" }, lazy = true },
     { "kristijanhusak/vim-dadbod-ui", ft = { "sql", "mysql", "plsql" }, lazy = true }
@@ -14,7 +13,7 @@ return {
       ["<Tab>"] = { "accept" }
     },
     sources = {
-      default = { "avante", "lsp", "path", "snippets", "buffer", "copilot" },
+      default = { "lsp", "path", "snippets", "buffer", "copilot" },
       per_filetype = {
         sql = { "snippets", "dadbod", "buffer" }
       },
@@ -29,10 +28,6 @@ return {
           name = "Dadbod",
           module = "vim_dadbod_completion.blink"
         },
-        avante = {
-          name = "Avante",
-          module = "blink-cmp-avante"
-        }
       },
     },
     fuzzy = { implementation = "prefer_rust_with_warning" },
