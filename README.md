@@ -6,7 +6,7 @@ A modern and AI-enhanced development environment featuring carefully curated too
 ### Editor - Neovim
 - **AI Assistance**
   - GitHub Copilot for intelligent code completion
-  - Avante.nvim for AI-powered coding assistance (powered by Claude 3.7)
+  - codecompanion.nvim for AI-powered coding assistance (powered by Claude 3.7)
 - **Development Tools**
   - LSP integration for code intelligence
   - Treesitter for better syntax highlighting
