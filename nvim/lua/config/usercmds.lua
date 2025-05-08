@@ -41,3 +41,14 @@ vim.api.nvim_create_user_command(
     desc = "Set token"
   }
 )
+
+-- User commands to enable/disable auto fixing
+vim.api.nvim_create_user_command("AutoFixEnable", function()
+  vim.g.eslint_auto_fix_enabled = true
+  vim.notify("Auto fix enabled")
+end, {})
+
+vim.api.nvim_create_user_command("AutoFixDisable", function()
+  vim.g.eslint_auto_fix_enabled = false
+  vim.notify("Auto fix disabled")
+end, {})
