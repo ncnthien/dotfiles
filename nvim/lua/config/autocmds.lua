@@ -74,7 +74,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 vim.api.nvim_create_autocmd("BufWritePre", {
   group = augroup("Eslint"),
   callback = function()
-    if vim.g.eslint_auto_fix_enabled ~= false and vim.fn.exists(":EslintFixAll") > 0 then
+    if vim.g.eslint_auto_fix_enabled ~= false and vim.fn.exists(":LspEslintFixAll") > 0 then
       vim.cmd("LspEslintFixAll")
     end
   end,
