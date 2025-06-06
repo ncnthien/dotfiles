@@ -75,7 +75,7 @@ vim.api.nvim_create_autocmd("BufWritePre", {
   group = augroup("Eslint"),
   callback = function()
     if vim.g.eslint_auto_fix_enabled ~= false and vim.fn.exists(":EslintFixAll") > 0 then
-      vim.cmd("EslintFixAll")
+      vim.cmd("LspEslintFixAll")
     end
   end,
 })
