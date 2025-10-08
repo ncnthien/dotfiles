@@ -1,6 +1,5 @@
 {
   "VectorCode": { "branch": "main", "commit": "bbebe77e3025dc89443d7401e63379407da486ee" },
-  "blink-cmp-copilot": { "branch": "main", "commit": "439cff78780c033aa23cf061d7315314b347e3c1" },
   "blink.cmp": { "branch": "main", "commit": "9bcb14b43852a6f2bfd5ac9ef29cb5cf09b1b39b" },
   "codecompanion.nvim": { "branch": "main", "commit": "637e4c5293a1d5c5a04e14ba49285ffb50d2e01b" },
   "contextfiles.nvim": { "branch": "main", "commit": "62be911a2f852da4da28c0e6a36c3e92004fdef0" },
@@ -25,6 +24,7 @@
   "obsidian": { "branch": "main", "commit": "ae1f76a75c7ce36866e1d9342a8f6f5b9c2caf9b" },
   "plenary.nvim": { "branch": "master", "commit": "857c5ac632080dba10aae49dba902ce3abf91b35" },
   "render-markdown.nvim": { "branch": "main", "commit": "76f7ce56ccb913632745714f160faa53164c5574" },
+  "sidekick.nvim": { "branch": "main", "commit": "e869205ff05a8defec31175e0f7f8f923e13cde6" },
   "smear-cursor.nvim": { "branch": "main", "commit": "1f90eb06eab82b5fe2ed708b94dcc325d6f5fb5a" },
   "snacks.nvim": { "branch": "main", "commit": "bc0630e43be5699bb94dadc302c0d21615421d93" },
   "tsc.nvim": { "branch": "main", "commit": "8c1b4ec6a48d038a79ced8674cb15e7db6dd8ef0" },
