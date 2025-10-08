@@ -7,6 +7,11 @@ return {
         backend = "tmux",
         enabled = true,
       },
+      win = {
+        keys = {
+          hide_t = { "<c-h>", "hide" }
+        },
+      },
     },
   },
   -- stylua: ignore
@@ -24,7 +29,7 @@ return {
     },
     {
       "<leader>aa",
-      function() require("sidekick.cli").toggle() end,
+      function() require("sidekick.cli").toggle({ name = "gemini", focus = true }) end,
       desc = "Sidekick Toggle CLI",
     },
     {
@@ -53,16 +58,10 @@ return {
       desc = "Sidekick Select Prompt",
     },
     {
-      "<c-.>",
+      "<C-.>",
       function() require("sidekick.cli").focus() end,
       mode = { "n", "x", "i", "t" },
       desc = "Sidekick Switch Focus",
-    },
-    -- Example of a keybinding to open Claude directly
-    {
-      "<leader>ac",
-      function() require("sidekick.cli").toggle({ name = "claude", focus = true }) end,
-      desc = "Sidekick Toggle Claude",
     },
   },
 }
