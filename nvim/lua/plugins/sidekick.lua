@@ -13,7 +13,6 @@ return {
       },
     },
   },
-  -- stylua: ignore
   keys = {
     {
       "<tab>",
