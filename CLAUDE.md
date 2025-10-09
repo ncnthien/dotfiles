@@ -10,15 +10,20 @@ This is a personal dotfiles repository for a modern development environment cent
 
 **This is a MANDATORY workflow rule that MUST be followed for every task:**
 
-**BEFORE starting ANY task:**
-- ALWAYS use ByteRover MCP (`mcp__byterover-mcp__byterover-retrieve-knowledge`) to retrieve relevant context/memory
-- Search for project conventions, file locations, configurations, previously discovered solutions, and any relevant patterns
+### 📋 Required Checklist for EVERY Task
 
-**AFTER completing ANY task:**
-- MUST evaluate if new reusable context was discovered (conventions, key file locations, configurations, keymaps, setup steps, solutions, patterns)
-- If valuable for future sessions, MUST ask permission before storing to ByteRover
-- Use `mcp__byterover-mcp__byterover-store-knowledge` after getting approval
-- Example: "I've learned that [X]. Would you like me to store this in memory for future reference?"
+**[ ] BEFORE starting ANY task:**
+1. Use `mcp__byterover-mcp__byterover-retrieve-knowledge` to retrieve relevant context
+2. Search for: project conventions, file locations, configurations, previously discovered solutions, patterns
+
+**[ ] AFTER completing ANY task:**
+1. Evaluate: Did I discover new reusable context? (conventions, configs, keymaps, solutions, patterns)
+2. If YES → **Ask permission IMMEDIATELY in this same response**
+3. After approval → Use `mcp__byterover-mcp__byterover-store-knowledge`
+
+**🚫 FORBIDDEN: Waiting for user to remind you to store knowledge**
+
+**Example ask:** "I've learned that [X]. Would you like me to store this in memory for future reference?"
 
 **This ensures continuity across sessions and prevents rediscovering the same information repeatedly.**
 
@@ -60,6 +65,7 @@ Examples from commit history:
 - Commit title MUST start with current branch name followed by colon
 - TWO blank lines separate title from detail description
 - Detail description items start with `-` prefix
+- **DO NOT add Co-Authored-By Claude footer** - only user commits
 
 ## Neovim Architecture
 

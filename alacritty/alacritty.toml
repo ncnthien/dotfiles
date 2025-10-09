@@ -14,3 +14,8 @@ size = 19.5
 chars = "\u001B[13;2u"
 key = "Return"
 mods = "Shift"
+
+[[keyboard.bindings]]
+key = "Period"
+mods = "Control"
+chars = "\u001B[46;5u"

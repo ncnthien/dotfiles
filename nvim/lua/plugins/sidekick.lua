@@ -6,11 +6,6 @@ return {
         backend = "tmux",
         enabled = true,
       },
-      win = {
-        keys = {
-          hide_t = { "<c-h>", "hide" }
-        },
-      },
     },
   },
   keys = {
