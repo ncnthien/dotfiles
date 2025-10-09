@@ -27,7 +27,7 @@ return {
     },
     {
       "<leader>aa",
-      function() require("sidekick.cli").toggle({ name = "gemini", focus = true }) end,
+      function() require("sidekick.cli").toggle({ name = "claude", focus = true }) end,
       desc = "Sidekick Toggle CLI",
     },
     {
