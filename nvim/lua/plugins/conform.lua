@@ -47,7 +47,7 @@ return {
       if vim.g.conform_format_on_save_enabled == false then
         return
       end
-      return { timeout_ms = 100, lsp_fallback = true }
+      return { timeout_ms = 500, lsp_fallback = true }
     end,
     formatters = {
       prettier = {
