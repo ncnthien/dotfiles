@@ -6,6 +6,9 @@ return {
         backend = "tmux",
         enabled = true,
       },
+      win = {
+        layout = "float"
+      }
     },
   },
   keys = {

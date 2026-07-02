@@ -1,4 +1,4 @@
-import = ["~/.config/alacritty/kanagawa-dragon.toml"]
+general.import = ["~/.config/alacritty/kanagawa-dragon.toml"]
 
 [window]
 startup_mode = "Maximized"
