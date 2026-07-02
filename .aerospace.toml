@@ -30,14 +30,6 @@ automatically-unhide-macos-hidden-apps = false
 [key-mapping]
     preset = 'qwerty'
 
-[gaps]
-    inner.horizontal = 14
-    inner.vertical =   14
-    outer.left =       14
-    outer.bottom =     14
-    outer.top =        14
-    outer.right =      14
-
 [mode.main.binding]
     alt-slash = 'layout tiles horizontal vertical'
     alt-comma = 'layout accordion horizontal vertical'
